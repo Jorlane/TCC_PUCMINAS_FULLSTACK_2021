@@ -1,0 +1,22 @@
+.Content {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    width: calc(100%);
+    height: calc(100vh - 4rem);
+    z-index: 0;
+    top: 4rem;
+}
+
+@media (max-width: 600px) {
+    .Content {
+        height: calc(100vh - 8rem);
+    }
+}
+
+@media (max-height: 300px) {
+    .Content {
+        height: calc(100vh - 4rem);
+    }
+}

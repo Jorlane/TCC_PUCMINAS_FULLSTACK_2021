@@ -1,0 +1,9 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.material-icons-outlined {
+    font-size:2rem;
+}

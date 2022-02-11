@@ -1,0 +1,673 @@
+{
+  "id" : 1,
+  "name" : "Name",
+  "description" : "Description",
+  "revision" : 0,
+  "lastModifiedDate" : "2021-10-04T22:22:12Z",
+  "lastModifiedAgent" : "structurizr-web/2502",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKICAgIG1vZGVsIHsKICAgICAgICB1c2VyQW55bm9tb3VzID0gcGVyc29uICJVc3XDoXJpbyBOw6NvIEF1dGVudGljYWRvIgogICAgICAgIHVzZXJBdXRoID0gcGVyc29uICJVc3XDoXJpbyBBdXRlbnRpY2FkbyIKICAgICAgICBhZG1pbiA9IHBlcnNvbiAiQWRtaW5pc3RyYWRvciIKICAgICAgICB0aW1lciA9IHNvZnR3YXJlU3lzdGVtICJBZ2VuZGFkb3IgZGUgcHJvY2Vzc2FtZW50byBkZSByb3RpbmEiCiAgICAgICAgZ29vZ2xlQWNjb3VudEFwaSA9IHNvZnR3YXJlU3lzdGVtICJHb29nbGUgQWNjb3VudCBBcGkiCiAgICAgICAgZmFjZWJvb2tBY2NvdW50QXBpID0gc29mdHdhcmVTeXN0ZW0gIkZhY2Vib29rIEFjY291bnQgQXBpIgogICAgICAgIGxpbmtlZGluQWNjb3VudEFwaSA9IHNvZnR3YXJlU3lzdGVtICJMaW5rZWRpbiBBY2NvdW50IEFwaSIKICAgICAgICBlbWFpbFNlcnZpY2UgPSBzb2Z0d2FyZVN5c3RlbSAiRW1haWwgU2VydmljZSIKCiAgICAgICAgZW50ZXJwcmlzZSBibG9nIHsKICAgICAgICAgICAgYmxvZ1N5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJQbGF0YWZvcm1hIGRlIGJsb2ciIHsKCiAgICAgICAgICAgICAgICB3ZWJzZXJ2ZXJfYXBwID0gY29udGFpbmVyICJBcGxpY2HDp8OjbyBXZWIiICJTZXJ2aWRvciBkb3MgYXJxdWl2b3MgZXN0w6F0aWNvcyBkYSBhcGxpY2HDp8OjbyIgIk5vZGVKUyArIEV4cHJlc3MiCiAgICAgICAgICAgICAgICBTUEEgPSBjb250YWluZXIgIlNQQSIgIkZyb250IGVuZCIgIlJlYWN0IiAic2hhcGVTUEEiCiAgICAgICAgICAgICAgICBkYXRhYmFzZSA9IGNvbnRhaW5lciAiQmFzZSBkZSBkYWRvcyBCbG9nIiAiQXJtYXplbmEgb3MgZGFkb3MiICJNYXJpYURCIiAiRGF0YWJhc2UiCiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIEFQSSA9IGNvbnRhaW5lciAiQVBJIiAiQVBJIGRlIHNlcnZpw6dvcyBiYWNrZW5kIiAiTm9kZUpTIiB7CiAgICAgICAgICAgICAgICAgICAgRGF0YWJhc2VPUk0gPSBjb21wb25lbnQgIkRhdGFiYXNlIE9STSIgIkFjZXNzbyBhIGRhZG9zIiAiT1JNIiAKICAgICAgICAgICAgICAgICAgICBMb2dpbkNvbnRyb2xsZXIgPSBjb21wb25lbnQgIkxvZ2luIENvbnRyb2xsZXIiICJSZWFsaXphIGEgYXV0ZW50aWNhw6fDo28gZG9zIHVzdcOhcmlvcy4iCiAgICAgICAgICAgICAgICAgICAgVXNlckNvbnRyb2xsZXIgPSBjb21wb25lbnQgIlVzZXIgQ29udHJvbGxlciIgIkNvbmZpZ3VyYcOnw6NvIGRvIFBlcmZpbCBkbyB1c3XDoXJpbyIKICAgICAgICAgICAgICAgICAgICBXcml0ZXJDb250cm9sbGVyID0gY29tcG9uZW50ICJCbG9nIENvbnRyb2xsZXIiICJDb25maWd1cmHDp8OjbyBlIG1hbnVudGVuw6fDo28gZG8gYmxvZy4iCiAgICAgICAgICAgICAgICAgICAgQ2F0ZWdvcnlDb250cm9sbGVyID0gY29tcG9uZW50ICJDYXRlZ29yeSBDb250cm9sbGVyIiAiTWFudXRlbsOnw6NvIGRlIENhdGVnb3JpYSIgCiAgICAgICAgICAgICAgICAgICAgQXJ0aWNsZUNvbnRyb2xsZXIgPSBjb21wb25lbnQgIkFydGljbGUgQ29udHJvbGxlciIgIk1hbnV0ZW7Dp8OjbyBkZSBhcnRpZ29zIgogICAgICAgICAgICAgICAgICAgIE5vdGlmaWNhdGlvbkNvbnRyb2xsZXIgPSBjb21wb25lbnQgIk5vdGlmaWNhdGlvbiBDb250cm9sbGVyIiAiR2VyZW5jaWFtZW50byBkZSBub3RpZmljYcOnw6NvIgoKICAgICAgICAgICAgICAgICAgICBEYXRhYmFzZU9STSAtPiBkYXRhYmFzZSAicGVyc2lzdGUgZGFkb3MiICJPUk0iICJyZWxhdGlvbnNoaXBTaGFwZSIKICAgICAgICAgICAgICAgICAgICBMb2dpbkNvbnRyb2xsZXIgLT4gRGF0YWJhc2VPUk0gInV0aWxpemEiCiAgICAgICAgICAgICAgICAgICAgVXNlckNvbnRyb2xsZXIgLT4gRGF0YWJhc2VPUk0gInV0aWxpemEiCiAgICAgICAgICAgICAgICAgICAgV3JpdGVyQ29udHJvbGxlciAtPiBEYXRhYmFzZU9STSAidXRpbGl6YSIKICAgICAgICAgICAgICAgICAgICBDYXRlZ29yeUNvbnRyb2xsZXIgLT4gRGF0YWJhc2VPUk0gInV0aWxpemEiCiAgICAgICAgICAgICAgICAgICAgQXJ0aWNsZUNvbnRyb2xsZXIgLT4gRGF0YWJhc2VPUk0gInV0aWxpemEiCiAgICAgICAgICAgICAgICAgICAgTm90aWZpY2F0aW9uQ29udHJvbGxlciAtPiBEYXRhYmFzZU9STSAidXRpbGl6YSIKICAgICAgICAgICAgICAgICAgICBOb3RpZmljYXRpb25Db250cm9sbGVyIC0+IGVtYWlsU2VydmljZSAidXRpbGl6YSIKICAgICAgICAgICAgICAgICAgICBVc2VyQ29udHJvbGxlciAtPiBlbWFpbFNlcnZpY2UgInV0aWxpemEiCgogICAgICAgICAgICAgICAgICAgIFNQQSAtPiBMb2dpbkNvbnRyb2xsZXIgInV0aWxpemEiCiAgICAgICAgICAgICAgICAgICAgU1BBIC0+IFVzZXJDb250cm9sbGVyICJ1dGlsaXphIgogICAgICAgICAgICAgICAgICAgIFNQQSAtPiBXcml0ZXJDb250cm9sbGVyICJ1dGlsaXphIgogICAgICAgICAgICAgICAgICAgIFNQQSAtPiBDYXRlZ29yeUNvbnRyb2xsZXIgInV0aWxpemEiCiAgICAgICAgICAgICAgICAgICAgU1BBIC0+IEFydGljbGVDb250cm9sbGVyICJ1dGlsaXphIgogICAgICAgICAgICAgICAgICAgIFNQQSAtPiBVc2VyQ29udHJvbGxlciAidXRpbGl6YSIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIHVzZXJBbnlub21vdXMgLT4gU1BBICJVdGlsaXphIgogICAgICAgICAgICAgICAgdXNlckF1dGggLT4gU1BBICJVdGlsaXphIiIKICAgICAgICAgICAgICAgIGFkbWluIC0+IFNQQSAiVXRpbGl6YSIKICAgICAgICAgICAgICAgIHRpbWVyIC0+IEFQSSAiQWdlbmRhIEV4ZWN1w6fDo28gZGUgUm90aW5hIgogICAgICAgICAgICAgICAgbG9naW5Db250cm9sbGVyIC0+IGdvb2dsZUFjY291bnRBcGkgIkF1dGVudGljYSIKICAgICAgICAgICAgICAgIGxvZ2luQ29udHJvbGxlciAtPiBmYWNlYm9va0FjY291bnRBcGkgIkF1dGVudGljYSIKICAgICAgICAgICAgICAgIGxvZ2luQ29udHJvbGxlciAtPiBsaW5rZWRpbkFjY291bnRBcGkgIkF1dGVudGljYSIKICAgICAgICAgICAgICAgIEFQSSAtPiBlbWFpbFNlcnZpY2UgIkVudmlhIGVtYWlsIgogICAgICAgICAgICAgICAgZW1haWxTZXJ2aWNlIC0+IHVzZXJBdXRoICJFbnZpYSBlbWFpbCBwYXJhIgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIHdlYnNlcnZlcl9hcHAgLT4gU1BBICJzZXJ2ZSIgIkhUVFBTIiAicmVsYXRpb25zaGlwU2hhcGUiCiAgICAgICAgU1BBIC0+IEFQSSAidXRpbGl6YSIgIiIgInJlbGF0aW9uc2hpcFNoYXBlIgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IGJsb2dTeXN0ZW0gIkM0TW9kZWwtQ29udGV4dCIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICB9CiAgICAgICAgY29udGFpbmVyIGJsb2dTeXN0ZW0gIkM0LUNvbnRhaW5lciIgIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQogICAgICAgIGNvbXBvbmVudCBBUEkgIkM0LUNvbXBvbmVudCIgIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgfQogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIkV4dGVybmFsIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjZGRkZGRkCiAgICAgICAgICAgICAgICBjb2xvciAjMDAwMDAwCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiRGF0YWJhc2UiIHsKICAgICAgICAgICAgICAgIHNoYXBlIEN5bGluZGVyCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAic2hhcGVTUEEiIHsKICAgICAgICAgICAgICAgIHNoYXBlIFdlYkJyb3dzZXIKICAgICAgICAgICAgfQogICAgICAgICAgICByZWxhdGlvbnNoaXAgInJlbGF0aW9uc2hpcFNoYXBlIiB7CiAgICAgICAgICAgICAgICB0aGlja25lc3MgMgogICAgICAgICAgICAgICAgY29sb3IgIzAwMDAwMAogICAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIHRoZW1lIGRlZmF1bHQKICAgIH0KfQo="
+  },
+  "configuration" : { },
+  "model" : {
+    "enterprise" : {
+      "name" : "blog"
+    },
+    "people" : [ {
+      "id" : "3",
+      "tags" : "Element,Person",
+      "name" : "Administrador",
+      "relationships" : [ {
+        "id" : "43",
+        "tags" : "Relationship",
+        "sourceId" : "3",
+        "destinationId" : "11",
+        "description" : "Utiliza"
+      }, {
+        "id" : "44",
+        "tags" : "Relationship",
+        "sourceId" : "3",
+        "destinationId" : "9",
+        "description" : "Utiliza"
+      } ],
+      "location" : "Unspecified"
+    }, {
+      "id" : "2",
+      "tags" : "Element,Person",
+      "name" : "Usuário Autenticado",
+      "relationships" : [ {
+        "id" : "41",
+        "tags" : "Relationship",
+        "sourceId" : "2",
+        "destinationId" : "11",
+        "description" : "Utiliza"
+      }, {
+        "id" : "42",
+        "tags" : "Relationship",
+        "sourceId" : "2",
+        "destinationId" : "9",
+        "description" : "Utiliza"
+      } ],
+      "location" : "Unspecified"
+    }, {
+      "id" : "1",
+      "tags" : "Element,Person",
+      "name" : "Usuário Não Autenticado",
+      "relationships" : [ {
+        "id" : "40",
+        "tags" : "Relationship",
+        "sourceId" : "1",
+        "destinationId" : "9",
+        "description" : "Utiliza"
+      }, {
+        "id" : "39",
+        "tags" : "Relationship",
+        "sourceId" : "1",
+        "destinationId" : "11",
+        "description" : "Utiliza"
+      } ],
+      "location" : "Unspecified"
+    } ],
+    "softwareSystems" : [ {
+      "id" : "4",
+      "tags" : "Element,Software System",
+      "name" : "Agendador de processamento de rotina",
+      "relationships" : [ {
+        "id" : "45",
+        "tags" : "Relationship",
+        "sourceId" : "4",
+        "destinationId" : "13",
+        "description" : "Agenda Execução de Rotina"
+      }, {
+        "id" : "46",
+        "tags" : "Relationship",
+        "sourceId" : "4",
+        "destinationId" : "9",
+        "description" : "Agenda Execução de Rotina"
+      } ],
+      "location" : "External"
+    }, {
+      "id" : "8",
+      "tags" : "Element,Software System",
+      "name" : "Email Service",
+      "relationships" : [ {
+        "id" : "57",
+        "tags" : "Relationship",
+        "sourceId" : "8",
+        "destinationId" : "2",
+        "description" : "Envia email para"
+      } ],
+      "location" : "External"
+    }, {
+      "id" : "9",
+      "tags" : "Element,Software System",
+      "name" : "Plataforma de blog",
+      "relationships" : [ {
+        "id" : "52",
+        "tags" : "Relationship",
+        "sourceId" : "9",
+        "destinationId" : "6",
+        "description" : "Autentica"
+      }, {
+        "id" : "55",
+        "tags" : "Relationship",
+        "sourceId" : "9",
+        "destinationId" : "7",
+        "description" : "Autentica"
+      }, {
+        "id" : "49",
+        "tags" : "Relationship",
+        "sourceId" : "9",
+        "destinationId" : "5",
+        "description" : "Autentica"
+      }, {
+        "id" : "31",
+        "tags" : "Relationship",
+        "sourceId" : "9",
+        "destinationId" : "8",
+        "description" : "utiliza"
+      } ],
+      "location" : "Internal",
+      "containers" : [ {
+        "id" : "12",
+        "tags" : "Element,Container,Database",
+        "name" : "Base de dados Blog",
+        "description" : "Armazena os dados",
+        "technology" : "MariaDB"
+      }, {
+        "id" : "10",
+        "tags" : "Element,Container",
+        "name" : "Aplicação Web",
+        "description" : "Servidor dos arquivos estáticos da aplicação",
+        "relationships" : [ {
+          "id" : "58",
+          "tags" : "Relationship,relationshipShape",
+          "sourceId" : "10",
+          "destinationId" : "11",
+          "description" : "serve",
+          "technology" : "HTTPS"
+        } ],
+        "technology" : "NodeJS + Express"
+      }, {
+        "id" : "13",
+        "tags" : "Element,Container",
+        "name" : "API",
+        "description" : "API de serviços backend",
+        "relationships" : [ {
+          "id" : "48",
+          "tags" : "Relationship",
+          "sourceId" : "13",
+          "destinationId" : "5",
+          "description" : "Autentica"
+        }, {
+          "id" : "51",
+          "tags" : "Relationship",
+          "sourceId" : "13",
+          "destinationId" : "6",
+          "description" : "Autentica"
+        }, {
+          "id" : "56",
+          "tags" : "Relationship",
+          "sourceId" : "13",
+          "destinationId" : "8",
+          "description" : "Envia email"
+        }, {
+          "id" : "30",
+          "tags" : "Relationship",
+          "sourceId" : "13",
+          "destinationId" : "8",
+          "description" : "utiliza"
+        }, {
+          "id" : "54",
+          "tags" : "Relationship",
+          "sourceId" : "13",
+          "destinationId" : "7",
+          "description" : "Autentica"
+        }, {
+          "id" : "22",
+          "tags" : "Relationship,relationshipShape",
+          "sourceId" : "13",
+          "destinationId" : "12",
+          "description" : "persiste dados",
+          "technology" : "ORM"
+        } ],
+        "technology" : "NodeJS",
+        "components" : [ {
+          "id" : "16",
+          "tags" : "Element,Component",
+          "name" : "User Controller",
+          "description" : "Configuração do Perfil do usuário",
+          "relationships" : [ {
+            "id" : "32",
+            "tags" : "Relationship",
+            "sourceId" : "16",
+            "destinationId" : "8",
+            "description" : "utiliza"
+          }, {
+            "id" : "24",
+            "tags" : "Relationship",
+            "sourceId" : "16",
+            "destinationId" : "14",
+            "description" : "utiliza"
+          } ],
+          "size" : 0
+        }, {
+          "id" : "14",
+          "tags" : "Element,Component",
+          "name" : "Database ORM",
+          "description" : "Acesso a dados",
+          "relationships" : [ {
+            "id" : "21",
+            "tags" : "Relationship,relationshipShape",
+            "sourceId" : "14",
+            "destinationId" : "12",
+            "description" : "persiste dados",
+            "technology" : "ORM"
+          } ],
+          "technology" : "ORM",
+          "size" : 0
+        }, {
+          "id" : "15",
+          "tags" : "Element,Component",
+          "name" : "Login Controller",
+          "description" : "Realiza a autenticação dos usuários.",
+          "relationships" : [ {
+            "id" : "23",
+            "tags" : "Relationship",
+            "sourceId" : "15",
+            "destinationId" : "14",
+            "description" : "utiliza"
+          }, {
+            "id" : "53",
+            "tags" : "Relationship",
+            "sourceId" : "15",
+            "destinationId" : "7",
+            "description" : "Autentica"
+          }, {
+            "id" : "47",
+            "tags" : "Relationship",
+            "sourceId" : "15",
+            "destinationId" : "5",
+            "description" : "Autentica"
+          }, {
+            "id" : "50",
+            "tags" : "Relationship",
+            "sourceId" : "15",
+            "destinationId" : "6",
+            "description" : "Autentica"
+          } ],
+          "size" : 0
+        }, {
+          "id" : "20",
+          "tags" : "Element,Component",
+          "name" : "Notification Controller",
+          "description" : "Gerenciamento de notificação",
+          "relationships" : [ {
+            "id" : "28",
+            "tags" : "Relationship",
+            "sourceId" : "20",
+            "destinationId" : "14",
+            "description" : "utiliza"
+          }, {
+            "id" : "29",
+            "tags" : "Relationship",
+            "sourceId" : "20",
+            "destinationId" : "8",
+            "description" : "utiliza"
+          } ],
+          "size" : 0
+        }, {
+          "id" : "19",
+          "tags" : "Element,Component",
+          "name" : "Article Controller",
+          "description" : "Manutenção de artigos",
+          "relationships" : [ {
+            "id" : "27",
+            "tags" : "Relationship",
+            "sourceId" : "19",
+            "destinationId" : "14",
+            "description" : "utiliza"
+          } ],
+          "size" : 0
+        }, {
+          "id" : "17",
+          "tags" : "Element,Component",
+          "name" : "Blog Controller",
+          "description" : "Configuração e manuntenção do blog.",
+          "relationships" : [ {
+            "id" : "25",
+            "tags" : "Relationship",
+            "sourceId" : "17",
+            "destinationId" : "14",
+            "description" : "utiliza"
+          } ],
+          "size" : 0
+        }, {
+          "id" : "18",
+          "tags" : "Element,Component",
+          "name" : "Category Controller",
+          "description" : "Manutenção de Categoria",
+          "relationships" : [ {
+            "id" : "26",
+            "tags" : "Relationship",
+            "sourceId" : "18",
+            "destinationId" : "14",
+            "description" : "utiliza"
+          } ],
+          "size" : 0
+        } ]
+      }, {
+        "id" : "11",
+        "tags" : "Element,Container,shapeSPA",
+        "name" : "SPA",
+        "description" : "Front end",
+        "relationships" : [ {
+          "id" : "35",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "16",
+          "description" : "utiliza"
+        }, {
+          "id" : "37",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "18",
+          "description" : "utiliza"
+        }, {
+          "id" : "34",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "13",
+          "description" : "utiliza"
+        }, {
+          "id" : "33",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "15",
+          "description" : "utiliza"
+        }, {
+          "id" : "36",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "17",
+          "description" : "utiliza"
+        }, {
+          "id" : "38",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "19",
+          "description" : "utiliza"
+        } ],
+        "technology" : "React"
+      } ]
+    }, {
+      "id" : "6",
+      "tags" : "Element,Software System",
+      "name" : "Facebook Account Api",
+      "location" : "External"
+    }, {
+      "id" : "5",
+      "tags" : "Element,Software System",
+      "name" : "Google Account Api",
+      "location" : "External"
+    }, {
+      "id" : "7",
+      "tags" : "Element,Software System",
+      "name" : "Linkedin Account Api",
+      "location" : "External"
+    } ]
+  },
+  "documentation" : { },
+  "views" : {
+    "systemContextViews" : [ {
+      "softwareSystemId" : "9",
+      "key" : "C4Model-Context",
+      "paperSize" : "Slide_16_10",
+      "dimensions" : {
+        "width" : 3508,
+        "height" : 2193
+      },
+      "enterpriseBoundaryVisible" : true,
+      "elements" : [ {
+        "id" : "1",
+        "x" : 760,
+        "y" : 80
+      }, {
+        "id" : "2",
+        "x" : 2140,
+        "y" : 75
+      }, {
+        "id" : "3",
+        "x" : 1500,
+        "y" : 75
+      }, {
+        "id" : "4",
+        "x" : 625,
+        "y" : 630
+      }, {
+        "id" : "5",
+        "x" : 630,
+        "y" : 1085
+      }, {
+        "id" : "6",
+        "x" : 650,
+        "y" : 1525
+      }, {
+        "id" : "7",
+        "x" : 1425,
+        "y" : 1515
+      }, {
+        "id" : "8",
+        "x" : 2095,
+        "y" : 1475
+      }, {
+        "id" : "9",
+        "x" : 1500,
+        "y" : 855
+      } ],
+      "relationships" : [ {
+        "id" : "40"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "42",
+        "vertices" : [ {
+          "x" : 2080,
+          "y" : 590
+        } ]
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "57"
+      }, {
+        "id" : "46"
+      }, {
+        "id" : "49"
+      } ]
+    } ],
+    "containerViews" : [ {
+      "softwareSystemId" : "9",
+      "key" : "C4-Container",
+      "paperSize" : "A4_Landscape",
+      "dimensions" : {
+        "width" : 3508,
+        "height" : 2480
+      },
+      "externalSoftwareSystemBoundariesVisible" : true,
+      "elements" : [ {
+        "id" : "11",
+        "x" : 700,
+        "y" : 425
+      }, {
+        "id" : "12",
+        "x" : 1700,
+        "y" : 370
+      }, {
+        "id" : "13",
+        "x" : 1575,
+        "y" : 1210
+      }, {
+        "id" : "1",
+        "x" : 120,
+        "y" : 905
+      }, {
+        "id" : "2",
+        "x" : 185,
+        "y" : 1745
+      }, {
+        "id" : "3",
+        "x" : 135,
+        "y" : 140
+      }, {
+        "id" : "4",
+        "x" : 2545,
+        "y" : 245
+      }, {
+        "id" : "5",
+        "x" : 2550,
+        "y" : 1675
+      }, {
+        "id" : "6",
+        "x" : 2550,
+        "y" : 1180
+      }, {
+        "id" : "7",
+        "x" : 2535,
+        "y" : 710
+      }, {
+        "id" : "8",
+        "x" : 1590,
+        "y" : 1795
+      }, {
+        "id" : "10",
+        "x" : 895,
+        "y" : 1210
+      } ],
+      "relationships" : [ {
+        "id" : "51"
+      }, {
+        "id" : "41"
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "30",
+        "vertices" : [ {
+          "x" : 1657,
+          "y" : 1656
+        } ]
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "22",
+        "vertices" : [ {
+          "x" : 1860,
+          "y" : 915
+        } ]
+      }, {
+        "id" : "56",
+        "vertices" : [ {
+          "x" : 1957,
+          "y" : 1648
+        } ]
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "57"
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "39"
+      } ]
+    } ],
+    "componentViews" : [ {
+      "key" : "C4-Component",
+      "paperSize" : "A4_Landscape",
+      "dimensions" : {
+        "width" : 3508,
+        "height" : 2480
+      },
+      "containerId" : "13",
+      "externalContainerBoundariesVisible" : true,
+      "elements" : [ {
+        "id" : "11",
+        "x" : 1370,
+        "y" : -5
+      }, {
+        "id" : "12",
+        "x" : 950,
+        "y" : 2160
+      }, {
+        "id" : "14",
+        "x" : 945,
+        "y" : 1655
+      }, {
+        "id" : "15",
+        "x" : 745,
+        "y" : 415
+      }, {
+        "id" : "16",
+        "x" : 2790,
+        "y" : 990
+      }, {
+        "id" : "17",
+        "x" : 1115,
+        "y" : 820
+      }, {
+        "id" : "18",
+        "x" : 1675,
+        "y" : 830
+      }, {
+        "id" : "19",
+        "x" : 2255,
+        "y" : 830
+      }, {
+        "id" : "5",
+        "x" : 185,
+        "y" : 1530
+      }, {
+        "id" : "6",
+        "x" : 110,
+        "y" : 1030
+      }, {
+        "id" : "7",
+        "x" : 85,
+        "y" : 600
+      }, {
+        "id" : "8",
+        "x" : 2070,
+        "y" : 2140
+      }, {
+        "id" : "20",
+        "x" : 1885,
+        "y" : 1645
+      } ],
+      "relationships" : [ {
+        "id" : "50"
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "32"
+      }, {
+        "id" : "21"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "26"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "24"
+      }, {
+        "id" : "23"
+      }, {
+        "id" : "33"
+      }, {
+        "id" : "47"
+      }, {
+        "id" : "38"
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "styles" : {
+        "elements" : [ {
+          "tag" : "External System",
+          "background" : "#dddddd",
+          "color" : "#000000"
+        }, {
+          "tag" : "Database",
+          "shape" : "Cylinder"
+        }, {
+          "tag" : "shapeSPA",
+          "shape" : "WebBrowser"
+        } ],
+        "relationships" : [ {
+          "tag" : "relationshipShape",
+          "thickness" : 2,
+          "color" : "#000000"
+        } ]
+      },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ],
+      "terminology" : { },
+      "lastSavedView" : "C4-Component"
+    }
+  }
+}

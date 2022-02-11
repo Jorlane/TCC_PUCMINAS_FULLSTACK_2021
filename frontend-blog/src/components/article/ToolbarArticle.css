@@ -1,0 +1,47 @@
+.ToolbarArticle {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.buttons-section {
+    background-color: #ddd;
+    border: 1px solid orange;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 0;
+    display: none;
+    margin-left: 10px;
+}
+
+/* .btn-toolbar {
+    width: 30px;
+    height: 30px;
+} */
+
+.buttons-section.active {
+    display: flex;
+    flex-direction: row;
+}
+
+.buttons-section button {
+    margin: 3px;
+    padding: 2px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.button-add-section {
+    background: none;
+    border: none;
+    color: orange;
+}
+
+.button-remove-section {
+    background: none;
+    border: none;
+    color: gray;
+}

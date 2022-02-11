@@ -1,0 +1,50 @@
+.MyArticlesItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 2px solid lightgray;
+    box-shadow: 5px 3px 3px gray;
+}
+
+.MyArticlesItem:hover {
+    background-color: #ccc;
+}
+
+.title {
+    font-size: 1.3rem;
+}
+
+.div-details {
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+
+.div-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.button-delete-article {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.button-delete-article:hover {
+    text-shadow: 1px 1px #fff;
+}
+
+.status {
+    font-style: italic;
+}
+
+.comments {
+    font-style: italic;
+}
+
+.likes {
+    font-style: italic;
+}

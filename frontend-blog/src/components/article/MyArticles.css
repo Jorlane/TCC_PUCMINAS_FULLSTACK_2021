@@ -1,0 +1,49 @@
+.MyArticles {
+    padding: 10px;
+}
+
+.list-articles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tab-title {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.button-link.active {
+    border-top: 2px solid black;
+}
+
+.btn-add-item {
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: blue;
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.btn-add-item.material-icons-outlined {
+    font-size: 3rem;
+}
+
+@media (max-width: 840px) {
+    .list-articles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .list-articles {
+        display: flex;
+        flex-direction: column;
+    }
+}
+

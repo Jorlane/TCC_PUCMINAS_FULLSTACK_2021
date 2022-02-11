@@ -1,0 +1,17 @@
+digraph {
+  compound=true
+  graph [splines=polyline,rankdir=TB,ranksep=1.0,nodesep=1.0,fontsize=5]
+  node [shape=box,fontsize=5]
+  edge []
+
+  subgraph cluster_enterprise {
+    margin=25
+  }
+
+  1 [width=1.333333,height=1.333333,fixedsize=true,id=1,label="1: User"]
+  2 [width=1.500000,height=1.000000,fixedsize=true,id=2,label="2: Plataforma de blog"]
+  3 [width=1.500000,height=1.000000,fixedsize=true,id=3,label="3: Google Account Api"]
+
+  1 -> 2 [id=4]
+  2 -> 3 [id=5]
+}

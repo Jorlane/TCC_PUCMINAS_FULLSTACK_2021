@@ -1,0 +1,177 @@
+.Profile {
+    overflow: scroll;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.profile-content {
+    width: 800px;
+    align-self: center;
+}
+
+.profile_toolbar > a {
+    text-decoration: none;
+}
+
+.Profile form {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.Profile form label {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 0.8rem;
+}
+
+.Profile form input {
+    padding: 3px;
+}
+
+.Profile .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.Profile textarea {
+    padding: 3px;
+}
+
+.profile_toolbar {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button_icon {
+    padding: 0;
+}
+
+.tab_icon_title {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    width: 70px;
+    
+}
+
+.tab_icon_title.active {
+    border-bottom: 2px solid black;
+}
+
+.profile_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#image-profile {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.div-img-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-info-profile {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: gray;
+}
+
+.div-field-profile {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.check-box {
+    width: 20px;
+    height: 20px;
+}
+
+#btn-img-profile {
+    background: none;
+    border: none;
+    float: right;
+    cursor: pointer;
+}
+
+.Profile .buttons button {
+    padding: 10px;
+    min-width: 130px;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#btn-remove-profile {
+    border: none;
+    border-radius: 6px;
+    padding: 30px 15px;
+    font-size: 0.9rem;
+}
+
+#btn-cancel-update {
+    color: #444;
+    
+}
+
+#btn-cancel-update .button_icon {
+    color: #444;
+}
+
+#btn-save-profile {
+    color: darkgreen;
+    border: none;
+    border-radius: 6px;
+}
+
+#btn-save-profile .button_icon {
+    color: green;
+}
+
+.frequency-select {
+    min-width: 150px;
+    color: lightgray;
+    border: 1px solid lightgray;
+    visibility: hidden;
+}
+
+.frequency-select.active{
+    color: black;
+    border: 1px solid black;
+    visibility: visible;
+}
+
+#select-file-image {
+    font-size: 0.2rem;
+    color: transparent;
+    display: none;
+}

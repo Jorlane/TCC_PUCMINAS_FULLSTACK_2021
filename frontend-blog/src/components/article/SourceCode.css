@@ -1,0 +1,40 @@
+.Article-Section {
+    width: 100%;
+    margin: 0;
+}
+
+.input-sourcecode {
+    width: 80%;
+    border: none;
+    font-size: 0.9rem;
+    font-family: 'Source Code Pro', monospace;
+    resize: none;
+    border: none;
+    overflow: auto;
+    resize: vertical;
+    padding: 2px;
+    background-color: #eee;
+}
+
+.input-sourcecode:hover {
+    border-left: 1px solid gray;
+}
+
+.input-sourcecode:focus {
+    outline: none
+}
+
+.div-source-area {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.item-toolbar {
+    display: none;
+}
+
+.item-toolbar.active {
+    display: flex;
+}

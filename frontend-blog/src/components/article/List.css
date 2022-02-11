@@ -1,0 +1,35 @@
+.Article-Section {
+    width: 100%;
+    margin: 0;
+}
+.input-list {
+    width: 100%;
+    border: none;
+    padding: 2px;
+    overflow: visible;
+    margin-left: 50px;
+}
+
+.input-list:hover {
+    border-left: 1px solid gray;
+}
+
+.input-list-item {
+    border: none;
+    font-size: 0.9rem;
+    overflow: auto;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.input-list-item:focus {
+    outline: none
+}
+
+.item-toolbar {
+    display: none;
+}
+
+.item-toolbar.active {
+    display: flex;
+}

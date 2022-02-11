@@ -1,0 +1,41 @@
+.Message {
+    width: 100%;
+    color: black;
+    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 5rem;
+    z-index: 9999;
+}
+
+.Message[visible='visible'] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.message-text {
+    width: 70%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.message-text[type='info'] {
+    background-color: #B3E5FC;
+    color: blue;
+}
+
+.message-text[type='warning'] {
+    background-color: #FFF9C4;
+    color: #37474F;
+}
+
+.message-text[type='error'] {
+    background-color: #FFCDD2;
+    color: red;
+}

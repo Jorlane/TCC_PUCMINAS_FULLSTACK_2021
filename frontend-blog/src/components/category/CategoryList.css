@@ -1,0 +1,93 @@
+.CategoryList { 
+    font-size: 1rem;
+    padding: 5px;
+}
+
+.CategoryList button {
+    cursor: pointer;
+}
+
+.list-title {
+    display: grid;
+    grid-template-columns: 30px 17fr 3fr 1fr;
+    grid-auto-rows: auto;
+    align-items: center;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+}
+
+.CategoryList .material-icons-outlined {
+    font-size: 1.3rem;
+}
+
+.list-category ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+}
+
+.title-expand {
+    text-align: left;
+    width: fit-content;
+}
+
+.title-category {
+    text-align: left;
+}
+
+.title-date {
+    text-align: center;
+}
+
+.title-action {
+    text-align: center;
+    padding-right: 10px;
+}
+
+.list-category {
+    width: calc(100%)
+}
+
+.btn-add-item {
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: blue;
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    z-index: 9999;
+}
+
+.btn-add-item.material-icons-outlined {
+    font-size: 3rem;
+}
+
+.category_toolbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width:600px) {
+    .title-date {
+        display: none;
+    }
+
+    .title-category {
+        text-align: left;
+        width: 80%;
+    }
+
+    .list-title {
+        display: grid;
+        grid-template-columns: 30px 20fr 1fr;
+    }
+
+    .btn-add-item {
+        right: 2.5rem;
+    }
+}

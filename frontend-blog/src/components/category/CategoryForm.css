@@ -1,0 +1,136 @@
+.CategoryForm {
+    border-radius: 6px;
+    padding: 3px;
+    width: 500px;
+    font-size: 0.9rem;
+    transition: width 1s;
+}
+
+.CategoryForm .form-title {
+    padding: 5px;
+    background: none;
+    margin-bottom: 3px;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.CategoryForm .form {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    color: #fff;
+    padding: 3px;
+}
+
+.form-fields {
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+}
+
+.form-fields label {
+    font-size: 0.8rem;
+}
+
+#input-init-date-category {
+    width: fit-content;
+    padding: 3px;
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+
+
+#input-name-category {
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
+    padding: 3px;
+    width: 98%;
+}
+
+#select-category {
+    margin: 0;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    padding: 3px;
+    width: 100%;
+}
+
+.buttons-form {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-form {
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 130px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.btn-form-save {
+    background-color: #00C853;
+}
+
+.btn-form-close {
+    background-color: #aaa;
+}
+
+.btn-form-clear {
+    background-color: #64B5F6;
+}
+
+.btn-form:hover {
+    border: 2px solid gray;
+}
+
+[visible='hidden'] {
+    display: none;
+}
+
+.select-parent-category {
+    color: black;
+}
+
+.select-parent-category option {
+    color: black;
+}
+
+.select-parent-category.place-holder {
+    color: gray;
+}
+
+@media (max-width:600px) {
+    .CategoryForm {
+        max-width: 85%;
+    }
+
+}

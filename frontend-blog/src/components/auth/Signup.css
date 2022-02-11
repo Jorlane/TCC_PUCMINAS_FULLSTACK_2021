@@ -1,0 +1,42 @@
+.Signup {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-signup {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.form-signup input {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding: 3px;
+}
+
+.btn-signup {
+    background-color: deepskyblue;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+
+@media (max-width:600px) {
+    .form-signup {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .Signup {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

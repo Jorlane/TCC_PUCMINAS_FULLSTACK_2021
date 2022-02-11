@@ -1,0 +1,30 @@
+.Article-Section {
+    width: 100%;
+    margin: 0;
+}
+
+.input-paragraph {
+    width: 100%;
+    border: none;
+    font-size: 0.9rem;
+    overflow: auto;
+    resize: none;
+    padding: 2px;
+    height: auto;
+}
+
+.input-paragraph:hover {
+    border-left: 1px solid gray;
+}
+
+.input-paragraph:focus {
+    outline: none
+}
+
+.item-toolbar {
+    display: none;
+}
+
+.item-toolbar.active {
+    display: flex;
+}

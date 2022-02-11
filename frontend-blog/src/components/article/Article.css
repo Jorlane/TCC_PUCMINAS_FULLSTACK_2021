@@ -1,0 +1,38 @@
+.Article {
+    padding: 40px;
+    overflow-y: scroll;
+}
+
+#div-title {
+    width: 100%;
+}
+
+.article-body {
+    overflow-y: scroll;
+}
+
+.div-category {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-content: center;
+    border-bottom: 2px solid gray;
+    padding-bottom: 5px;
+}
+
+#categories {
+    margin-left: 15px;
+    padding: 3px;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .Article {
+        padding: 10px;
+    }
+}

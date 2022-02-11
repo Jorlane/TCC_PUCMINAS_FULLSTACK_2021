@@ -1,0 +1,31 @@
+.Article-Section {
+    width: 100%;
+    margin: 0;
+}
+
+.input-caption {
+    width: 100%;
+    font-size: 1.2rem;
+    resize: none;
+    border: none;
+    overflow: auto;
+    resize: none;
+    padding: 2px;
+    font-weight: bold;
+}
+
+.input-caption:hover {
+    border-left: 1px solid gray;
+}
+
+.input-caption:focus {
+    outline: none
+}
+
+.item-toolbar {
+    display: none;
+}
+
+.item-toolbar.active {
+    display: flex;
+}

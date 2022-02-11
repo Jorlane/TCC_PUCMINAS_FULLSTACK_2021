@@ -1,0 +1,226 @@
+
+.ArticleViewBody {
+    margin: 5px;
+    margin-top: 15px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.ArticleViewBody * {
+    padding-top: 1rem;
+}
+
+.ArticleViewBody h1 {
+    text-align: center;
+}
+
+.ArticleViewBody h2 {
+    /* padding-top: 1rem; */
+}
+
+.ArticleViewBody p {
+    text-indent: 2rem;
+    /* padding-top: 1rem; */
+}
+
+.ArticleViewBody ul {
+    padding-left: 3rem;
+    /* padding-top: 1rem; */
+}
+
+.ArticleViewBody pre {
+    font-family: 'Source Code Pro', monospace;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 0.5rem;
+    background-color: lightgray;
+}
+
+.ArticleViewBody img {
+    /* padding-top: 10px; */
+    max-width: 200px;
+    align-self: center;
+}
+
+.div-img-view {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.div-img-view p {
+    text-align: center;
+    padding-top: 2px;
+    font-style: italic;
+}
+
+.ArticleViewBody li {
+    padding-top: 0;
+}
+
+.div-quote-view {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.text-quote-view {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-style: italic;
+    
+}
+.text-quote-view > span {
+    font-size: 1.5rem;
+}
+
+.author-quote-view {
+    text-align: left;
+    padding-left: 3rem;
+}
+
+.div-writer-article-view {
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: 15% 85%;
+    background-color: #eee;
+    padding: 0.5rem;
+}
+
+.div-profile-img-article-view {
+    width: 80px;
+    height: 80px;
+    padding: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.image-profile-article-view {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.div-details-article-view {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+}
+
+.bio-writer-article-view {
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    max-width: 840px;
+}
+
+.author-article-view {
+    font-weight: bold;
+}
+
+.link-follow {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.ArticleViewFooter {
+    border-top: 1px solid #ccc;
+    margin-top: 2rem;
+    padding: 0;
+}
+
+.div-button-like {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #333;
+    padding: 0;
+}
+
+.div-button-like button {
+    padding: 0;
+    color: #333;
+    border: none;
+    background: none;
+    margin: 0;
+}
+
+.div-button-like span {
+    padding-left: 0.5rem;
+    cursor: pointer;
+}
+
+.div-icon-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    color: #333;
+}
+
+.div-icon-comment span {
+    padding-left: 0.5rem;
+}
+
+.div-form-comments {
+    color: blue;
+    margin: 0%;
+    padding: 0;
+}
+
+.article_view_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.btn-unpublish-article {
+    display: none;
+}
+
+.btn-unpublish-article.active{
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: #D00;
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    z-index: 9999;
+    cursor: pointer;
+    display: block;
+}
+
+.btn-unpublish-article.material-icons-outlined {
+    font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    .ArticleViewBody {
+        margin: 5px;
+        margin-top: 15px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .div-quote-view {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    .ArticleViewBody pre {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0.5rem;
+        background-color: #ddd;
+    }
+
+    .bio-writer-article-view  {
+        font-size: 0.9rem;
+        max-height: 4rem;
+        overflow: hidden;
+        white-space: wrap;
+    }
+}

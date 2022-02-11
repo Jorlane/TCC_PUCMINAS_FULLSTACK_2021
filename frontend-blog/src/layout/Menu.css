@@ -1,0 +1,146 @@
+.Menu {
+    color: black;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    list-style: none;
+}
+
+.menu-item {
+    display: none;
+    float: left;
+    min-width: 80px;
+}
+
+.menu-item.active {
+    display: block;
+}
+
+.menu-item:hover > a {
+    text-shadow: 1px 1px #fff;
+}
+
+.Menu a {
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.Menu li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.submenu li:hover {
+    background-color: rgb(0, 0, 0, 0.1);
+}
+
+#btn-mobile {
+    display: none;
+    padding: 5px 10px;
+    background: none;
+    border: none;
+}
+
+.submenu {
+    /* display: inline-block; */
+    /* display: none; */
+    background-color: #94B0B7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    /* position: absolute; */
+    z-index: 9999;
+    float: left;
+    position:absolute;
+    display:none;
+    margin-top: 0.5rem;
+}
+
+.submenu:hover {
+    display: inline-block;
+}
+
+.menu-item:hover ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 840px) {
+
+    #btn-mobile {
+        display: flex;
+    }
+
+    #menu-list{
+        display: none;
+        position: relative;
+        background-color: #94B0B7;
+        left: 0;
+        width: 100%;
+        z-index: 1500;
+        overflow: scroll;
+    }
+
+    #menu-list li {
+        border-bottom: 2px solid rgb(0, 0, 0, 0.05);
+    }
+
+    #menu-list.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 3rem;
+    }
+
+    #menu-list a {
+        display: block;
+    }
+
+    .submenu {
+        position:relative;
+        display:none;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    /* .menu-item {
+        display: block;
+    } */
+
+    .Menu li {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .menu-item:hover ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 3rem;
+    }
+
+    .Menu a {
+        padding: 7px;
+    }
+
+    .menu-item:hover {
+        background-color: rgb(0, 0, 0, 0.1);
+        text-shadow: none;
+    }
+
+    .menu-item:hover >  a {
+        text-shadow: none;
+    }
+
+}

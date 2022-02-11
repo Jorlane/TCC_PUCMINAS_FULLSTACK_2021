@@ -1,0 +1,1746 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Jorlane/Blog/1.0.0
+info:
+  description: Essa API é parte do projeto de conclusão do curso de pós-graduação Lato-sensu em Desenvolvimento Web FullStack da PucMinas em 2021.
+  version: "1.0.0"
+  title: Blog API
+  contact:
+    email: blog@jorlane.com.br
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: admins
+    description: Everything about admins tasks
+  - name: article
+    description: Operations about article
+  - name: blog
+    description: Operations about manage your blog
+paths:
+  /categories:
+    get:
+      tags:
+        - admins
+      summary: Returns all categories
+      description: Return all records of categories
+      operationId: getCategories
+      responses: 
+        200: 
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Category'
+    post:
+      tags: 
+        - admins
+      summary: create a new Category
+      operationId: createCategory
+      requestBody: 
+        description: Category object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Category'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema: 
+                type: object
+                items: 
+                  $ref: '#/components/schemas/Category'
+        405:
+          description: Invalid input
+          content: {}
+  /categories/{categoryId}:
+    get:
+      tags:
+        - admins
+      summary: Finds a category by id
+      description: Provide only one category id by param
+      operationId: getCategoryById
+      parameters:
+        - name: categoryId
+          in: path
+          description: ID of the Category 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+    delete:
+      tags:
+        - admins
+      summary: Delete Category by ID
+      description: Provide a Category id in parameter to delete category
+      operationId: deleteCategory
+      parameters:
+      - name: categoryId
+        in: path
+        description: ID of the category that needs to be deleted
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Category not found
+          content: {}
+  /sections:
+    get:
+      tags:
+        - admins
+      summary: Returns all sections
+      description: Return all records of sections
+      operationId: getSections
+      responses: 
+        200: 
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Section'
+  /sections/{id}:
+    get:
+      tags:
+        - admins
+      summary: Finds a section by id
+      description: Provide only one section id by param
+      operationId: getSectionById
+      parameters:
+      - name: id
+        in: path
+        description: ID of the section to find
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Section'
+  /users:
+    post:
+      tags: 
+        - blog
+      summary: create a new User
+      operationId: createUser
+      requestBody: 
+        description: User object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        405:
+          description: Invalid input
+          content: {}
+    put:
+      tags: 
+        - blog
+      summary: update an User
+      operationId: updateUser
+      requestBody: 
+        description: User object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/User'
+        required: true
+      responses:
+        200:  
+          description: Object updated successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/User'
+        405:
+          description: Invalid input
+          content: {}
+  /users/{id}:
+    get:
+      tags:
+        - blog
+      summary: Finds a user by id
+      description: Provide only one user id by param
+      operationId: getUserId
+      parameters:
+        - name: id
+          in: path
+          description: ID of the User 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      tags:
+          - blog
+      summary: Delete a user by ID
+      description: Provide a User id in parameter
+      operationId: deleteUser
+      parameters:
+      - name: id
+        in: path
+        description: ID of the user that needs to be deleted
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: User not found
+          content: {}
+  /users/login:
+    get:
+      tags:
+        - blog
+      summary: Logs user into the system
+      operationId: loginUser
+      parameters:
+      - name: username
+        in: query
+        description: The user name for login
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        description: The password for login in clear text
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              schema:
+                type: integer
+                format: int32
+            X-Expires-After:
+              description: date in UTC when token expires
+              schema:
+                type: string
+                format: date-time
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+        400:
+          description: Invalid username/password supplied
+          content: {}
+  /users/logout:
+    get:
+      tags:
+      - blog
+      summary: Logs out current logged in user session
+      operationId: logoutUser
+      responses:
+        default:
+          description: successful operation
+          content: {}
+  /writers:
+    get: 
+      tags:
+        - blog
+      summary: Finds a writer by user id
+      description: Provide only one user id by param 
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Writer'
+        404:
+          description: Writer not found
+          content: {}
+    post:
+      tags: 
+        - blog
+      summary: create a new Writer
+      operationId: createWriter
+      requestBody: 
+        description: Writer object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Writer'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Writer'
+        405:
+          description: Invalid input
+          content: {}
+    put:
+      tags: 
+        - blog
+      summary: Update an  Writer
+      operationId: updateWriter
+      requestBody: 
+        description: Writer object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Writer'
+        required: true
+      responses:
+        200:  
+          description: Object updated successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Writer'
+        405:
+          description: Invalid input
+          content: {}
+  /writers/{id}:
+    get:
+      tags:
+        - blog
+      summary: Finds an writer by id
+      description: Provide only one writer id by param
+      operationId: getWriterById
+      parameters:
+        - name: id
+          in: path
+          description: ID of the Writer 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Writer'
+    delete:
+      tags:
+        - blog
+      summary: Delete an writer by ID
+      description: Provide an Writer id in parameter
+      operationId: deleteWriter
+      parameters:
+      - name: id
+        in: path
+        description: ID of the writer that needs to be deleted
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Writer not found
+          content: {}
+  /sectionsInArticle:
+    post:
+      tags: 
+        - article
+      summary: create a new Section in Article
+      operationId: createSectionInArticle
+      requestBody: 
+        description: SectionInArticle object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/SectionInArticle'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SectionInArticle'
+        405:
+          description: Invalid input
+          content: {}
+    put:
+      tags: 
+        - article
+      summary: Update a section in article
+      operationId: updateSectionInArticle
+      requestBody: 
+        description: SectionInArticle object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/SectionInArticle'
+        required: true
+      responses:
+        200:  
+          description: Object updated successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/SectionInArticle'
+        405:
+          description: Invalid input
+          content: {}
+  /sectionsInArticle/{id}:
+    delete:
+      tags:
+        - article
+      summary: Delete a section in article by ID
+      description: Provide a sectionInArticle id in parameter
+      operationId: deleteSectionInArticle
+      parameters:
+      - name: id
+        in: path
+        description: ID of the SectionInArticle that needs to be deleted
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Writer not found
+          content: {}
+  /articles:
+    get: 
+      tags:
+        - article
+      summary: Return all articles
+      description: Return all article ordered by date
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Article'
+        404:
+          description: Articles not found
+          content: {}
+    post:
+      tags: 
+        - article
+      summary: create a new Article
+      operationId: createArticle
+      requestBody: 
+        description: Article object to create
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Article'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Article'
+        405:
+          description: Invalid input
+          content: {}
+    put:
+      tags: 
+        - article
+      summary: Update an article
+      operationId: updateArticle
+      requestBody: 
+        description: Article object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Article'
+        required: true
+      responses:
+        200:  
+          description: Object updated successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Article'
+        405:
+          description: Invalid input
+          content: {}
+  /articles/{articleId}:
+    get:
+      tags:
+        - blog
+      summary: Finds an article by id
+      description: Provide only one article id by param
+      operationId: getArticleById
+      parameters:
+        - name: articleId
+          in: path
+          description: ID of the Article 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Article'
+    delete:
+      tags:
+        - article
+      summary: Delete an Article by ID
+      description: Provide an Article id in parameter
+      operationId: deleteArticle
+      parameters:
+      - name: articleId
+        in: path
+        description: ID of the Article that needs to be deleted
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Article not found
+          content: {}
+  /articles/{articleId}/sections:
+    get: 
+      tags:
+        - article
+      summary: Return all section of the article
+      description: Return all article ordered by date
+      parameters:
+        - name: articleId
+          in: path
+          description: ID of the Article 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/SectionInArticle'
+        404:
+          description: Sections not found in the Article
+          content: {}
+  /articles/{articleId}/comments:
+    get: 
+      tags:
+        - article
+      summary: Return all comments of the article
+      description: Return all comments of the article ordered by date
+      operationId: getCommentsByArticle
+      parameters:
+        - name: articleId
+          in: path
+          description: ID of the Article 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Comment'
+        404:
+          description: Comments not found in the Article
+          content: {}
+    delete:
+      tags:
+        - article
+      summary: Delete Comments in an article 
+      description: Provide an article id in parameter
+      operationId: deleteCommentsInArticle
+      parameters:
+      - name: articleId
+        in: path
+        description: ID of the Article that needs to delete Comments
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Comments not found in the Article
+          content: {}
+  /articles/articlesByStatus/{status}:
+    get: 
+      tags:
+        - article
+      summary: Return Article by status
+      description: Return articles with the status received by parameter
+      operationId: getArticlesByStatus
+      parameters:
+        - name: status
+          in: path
+          description: status of the Article 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Article'
+        404:
+          description: Articles not found for this status
+          content: {}
+  /articles/{articleId}/sectionsInArticle:
+    get: 
+      tags:
+        - article
+      summary: Return all sections of the article
+      description: Return all sections of the article 
+      operationId: getSectionsInArticle
+      parameters:
+        - name: articleId
+          in: path
+          description: ID of the Article 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/SectionInArticle'
+        404:
+          description: Sections not found in the Article
+          content: {}
+    delete:
+      tags:
+        - article
+      summary: Delete sections in an article 
+      description: Provide an article id in parameter
+      operationId: deleteSectionsInArticle
+      parameters:
+      - name: articleId
+        in: path
+        description: ID of the Article that needs to delete sections
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Section not found in the Article
+          content: {}
+  /articles/articlesByWriter/{writerId}:
+    get: 
+      tags:
+        - article
+      summary: Return all articles by the writer order by status and date
+      description: Provide a WriterId by parameter to return the articles 
+      operationId: getArticlesByWriter
+      parameters:
+        - name: writerId
+          in: path
+          description: ID of the writer 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Article'
+        404:
+          description: Articles not found for the user
+          content: {}
+    delete:
+      tags:
+        - article
+      summary: Delete all articles written by an writer
+      description: Provide an writer id in parameter
+      operationId: deleteArticlesByWriter
+      parameters:
+      - name: writerId
+        in: path
+        description: ID of the Writer that written the articles
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Articles not found for this writer
+          content: {}
+  /articles/articlesByCategory/{categoryId}:
+    get: 
+      tags:
+        - article
+      summary: Return all articles by the category
+      description: Provide a CategoryId by parameter to return the articles
+      parameters:
+        - name: categoryId
+          in: path
+          description: ID of the category 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Article'
+        404:
+          description: Articles not found for the category
+          content: {}
+  /comments:
+    post:
+      tags: 
+        - article
+      summary: create a new Comment
+      operationId: createComment
+      requestBody: 
+        description: Comment object to create
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Comment'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Comment'
+        405:
+          description: Invalid input
+          content: {}
+    put:
+      tags: 
+        - article
+      summary: Update a Comment
+      operationId: updatComment
+      requestBody: 
+        description: Comment object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Comment'
+        required: true
+      responses:
+        200:  
+          description: Object updated successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Comment'
+        405:
+          description: Invalid input
+          content: {}
+  /comments/{commentId}:
+    get: 
+      tags:
+        - article
+      summary: Return a comment by id
+      description: Provide a CommentId by parameter to return the Comment object
+      operationId: getCommentById
+      parameters:
+        - name: commentId
+          in: path
+          description: ID of the comment 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Comment'
+        404:
+          description: Articles not found for the category
+          content: {}
+    delete:
+      tags:
+        - article
+      summary: Delete a comment by id
+      description: Provide a Comment id to delete the Comment
+      operationId: deleteCommentById
+      parameters:
+      - name: commentId
+        in: path
+        description: ID of the Comment to be deleted
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Comment not found
+          content: {}
+  /complaints: 
+    get: 
+      tags:
+        - Complaint
+      summary: Return all Complaints
+      description: Return all complaints ordered by date
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Complaint'
+        404:
+          description: Complaints not found
+          content: {}
+    post:
+      tags: 
+        - article
+      summary: create a new Complaint
+      operationId: createComplaint
+      requestBody: 
+        description: Complaint object to create
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Complaint'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Complaint'
+        405:
+          description: Invalid input
+          content: {}
+    put:
+      tags: 
+        - article
+      summary: Update a Complaint
+      operationId: updatComplaint
+      requestBody: 
+        description: Complaint object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Complaint'
+        required: true
+      responses:
+        200:  
+          description: Object updated successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Comment'
+        405:
+          description: Invalid input
+          content: {}
+  /complaints/{complaintId}:
+    get: 
+      tags:
+        - article
+      summary: Return a complaint by id
+      description: Provide a Complaint Id by parameter to return the Complaint object
+      operationId: getComplaintById
+      parameters:
+        - name: complaintId
+          in: path
+          description: ID of the complaint 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Complaint'
+        404:
+          description: Complaint not found
+          content: {}
+    delete:
+      tags:
+        - article
+      summary: Delete a complaint by id
+      description: Provide a Complaint id to delete the Complaint
+      operationId: deleteComplaintById
+      parameters:
+      - name: complaintId
+        in: path
+        description: ID of the Complaint to be deleted
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Complaint not found
+          content: {}
+  /complaints/complaintsByStatus/{status}:
+    get: 
+      tags:
+        - article
+      summary: Return all complaint by a status
+      description: Provide a Status by parameter to return the complaints
+      operationId: getComplaintsByStatus
+      parameters:
+        - name: status
+          in: path
+          description: status of the complaint 
+          required: true
+          schema:
+            minimum: 1.0
+            type: string
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Complaint'
+        404:
+          description: Complaints not found for this status
+          content: {}
+  /interactions:
+    post:
+      tags: 
+        - article
+      summary: create a new Interaction
+      operationId: createInteraction
+      requestBody: 
+        description: Interaction object to create
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Interaction'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Interaction'
+        405:
+          description: Invalid input
+          content: {}
+    put:
+      tags: 
+        - article
+      summary: Update an Interaction
+      operationId: updateInteraction
+      requestBody: 
+        description: Interaction object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Interaction'
+        required: true
+      responses:
+        200:  
+          description: Object updated successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Interaction'
+        405:
+          description: Invalid input
+          content: {}
+  /interactions/{id}:
+    delete:
+      tags:
+        - article
+      summary: Delete an Interaction by id
+      description: Provide a Interaction id 
+      operationId: deleteInteraction
+      parameters:
+      - name: id
+        in: path
+        description: ID of the Interaction to be deleted
+        required: true
+        schema:
+          minimum: 1.0
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Interaction not found
+          content: {}
+  /interactions/interactionsByArticle/{articleId}:
+    get: 
+      tags:
+        - article
+      summary: Return interactions by an Article id
+      description: Provide an articleId by parameter to return the Interactions
+      parameters:
+        - name: articleId
+          in: path
+          description: ID of the article 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Interaction'
+        404:
+          description: Interactions not found for the article
+          content: {}
+  /connections:
+    post:
+      tags: 
+        - article
+      summary: create a new Connection
+      operationId: createConnection
+      requestBody: 
+        description: Connection object to create
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Connection'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Connection'
+        405:
+          description: Invalid input
+          content: {}
+  /connections/followedby/{userId}:
+    get: 
+      tags:
+        - blog
+      summary: Return who this user follows
+      description: Provide an user id to find writers this user follows
+      parameters:
+        - name: userId
+          in: path
+          description: ID of the user
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Connection'
+        404:
+          description: Connections not found for the user
+          content: {}
+  /connections/followers/{writerId}:
+    get: 
+      tags:
+        - blog
+      summary: Return who follows an writer 
+      description: Provide an writerId to find his follolwers
+      parameters:
+        - name: writerId
+          in: path
+          description: ID of the writer
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Connection'
+        404:
+          description: Connections not found for the writer
+          content: {}
+  /notificationsType: 
+    get: 
+      tags:
+        - blog
+      summary: Return all objects of notificationType
+      description: Return all objects of notificationType
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/NotificationType'
+        404:
+          description: Notifications Type not found
+          content: {}
+  /notificationsType/{id}:
+    get: 
+      tags:
+        - blog
+      summary: Return the NotificationType by Id 
+      description: Provide an Id to find a NotificationType
+      parameters:
+        - name: id
+          in: path
+          description: ID of the NotificationType
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificationType'
+        404:
+          description: NotificationType not found for the id
+          content: {}
+  /notifications: 
+    post:
+      tags: 
+        - blog
+      summary: create a new Notification
+      operationId: createNotification
+      requestBody: 
+        description: Notification object to create
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Notification'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Notification'
+        405:
+          description: Invalid input
+          content: {}
+    put:
+      tags: 
+        - blog
+      summary: store a Notification
+      operationId: updateNotification
+      requestBody: 
+        description: Notification object to store
+        content: 
+          application/json:
+            schema: 
+              $ref: '#/components/schemas/Notification'
+        required: true
+      responses:
+        201:  
+          description: Object created successfully
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Notification'
+        405:
+          description: Invalid input
+          content: {}
+  /notifications/{notificationId}:
+    get: 
+      tags:
+        - blog
+      summary: Return a Notification by Id 
+      description: Provide an Notification Id to find a Notification object
+      parameters:
+        - name: notificationId
+          in: path
+          description: ID of the Notification
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                $ref: '#/components/schemas/Notification'
+        404:
+          description: Notification not found for this id
+          content: {}
+  /notifications/notificationsByStatus/{status}:
+    get: 
+      tags:
+        - blog
+      summary: Return a Notifications by status
+      description: Provide a status to find Notifications for this status
+      parameters:
+        - name: status
+          in: path
+          description: Status of the Notification
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Notification'
+        404:
+          description: Notification not found for this id
+          content: {}
+  /notifications/notificationsByUser/{userId}:
+    get: 
+      tags:
+        - blog
+      summary: Return a Notifications by user
+      description: Provide an user id to find Notifications for this user
+      parameters:
+        - name: userId
+          in: path
+          description: Id of the user 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Notification'
+        404:
+          description: Notification not found for this user
+          content: {}
+  /notifications/notificationsByArticle/{articleId}:
+    get: 
+      tags:
+        - blog
+      summary: Return a Notifications by article
+      description: Provide an user id to find Notifications for this article
+      parameters:
+        - name: articleId
+          in: path
+          description: Id of the article 
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int64
+      responses:
+        200:  
+          description: successful operation
+          content: 
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Notification'
+        404:
+          description: Notification not found for this article
+          content: {}
+components:
+  schemas:
+    Category:
+      type: object
+      required:
+        - id
+        - name
+        - initDate
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 10
+        name:
+          type: string
+          example: 'Tecnologia'
+        initDate:
+          type: string
+          format: date-time
+          example: '2016-08-29T09:12:33.001Z'
+        endDate:
+          type: string
+          format: date-time
+          example: '2020-08-29T09:12:33.001Z'
+        categoryParent: 
+          $ref: '#/components/schemas/Category'
+    Section:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+          id: 
+            type: integer
+            format: int64
+            example: 123
+          name: 
+            type: string
+            example: 'Paragrafo'
+    User:
+      type: object
+      required:
+        - id
+        - email
+        - password
+        - allowNotification
+      properties:
+        id:
+          type: integer
+          example: 123
+        email:
+          type: string
+          format: email
+          example: 'user@myemail.com.br'
+        name: 
+          type: string
+          example: 'Jose'
+        password: 
+          type: string
+          format: password
+          example: 'S237KND&K-JSJS1244'
+        photo:
+          type: string
+          example: 'user123/images/profile.png'
+        bioDescription: 
+          type: string
+          example: 'Jose é um desenvolvedor de aplicativos, entusiasta de tecnologia, futurologista e escritor.'
+        allowNotification:
+          type: boolean
+          example: true
+        frequencyNotification: 
+          type: string
+          example: 'SEMANAL'
+        firstAccess:
+          type: string
+          format: date-time
+          example: '2021-03-15T10:23:00.001Z'
+        lastAccess:
+          type: string
+          format: date-time
+          example: '2021-06-07T12:30:00.001Z'
+    Writer:
+      type: object
+      required:
+        - user
+        - allowComments
+      properties:
+          user: 
+            $ref: '#/components/schemas/User'
+          imageBanner: 
+            type: string
+            example: 'user123/images/banner.png'
+          headerColorText:
+            type: string
+            example:  '#424242'
+          headerColorBackground:
+            type: string
+            example: '#FFF9C4'
+          articleColorText: 
+            type: string
+            example: '#37474F'
+          articleColorBAckground:
+            type: string
+            example: '#37474F'
+          allowComments: 
+            type: boolean
+            example: true
+    Article: 
+      type: object
+      required:
+        - id
+        - writerId
+        - title
+        - categoryId
+        - status
+        - statusDate
+      properties:
+        id: 
+          type: integer
+          format: int64
+          example: 12
+        writerId:
+            type: integer
+            format: int64
+            example: 123
+        title:
+          type: string
+          example: 'O Futuro da Programação'
+        categoryId: 
+          type: integer
+          format: int64
+          example: 10
+        createdDate: 
+          type: string
+          format: date
+          example: '2021-11-01T10:05:00.001Z'
+        status: 
+          type: string
+          example: 'RASCUNHO'
+        statusDate: 
+          type: string
+          format: date
+          example: '2021-11-01T10:05:00.001Z'
+        htmlFilePath: 
+          type: string
+          example: 'user123/files/article_12.html'
+        route: 
+          type: string
+          example: '/blog/jose/articles/ofuturodaprogramacao'
+    SectionInArticle: 
+      type: object
+      required: 
+        - id
+        - section
+        - article
+      properties:
+        id: 
+          type: integer
+          format: int64
+          example: 110
+        section: 
+          $ref: '#/components/schemas/Section'
+        article:
+          type: integer
+          format: int64
+          example: 10
+        text:
+          type: string
+          example: 'Este é um exemplo de parágrafo que pode ser colocado no artigo...'
+        imagePath:
+          type: string
+          example: 'user123/files/article_12/image_110.png'
+    Comment: 
+      type: object
+      required: 
+        - id
+        - articleId
+        - userId
+        - text
+        - date
+      properties: 
+        id: 
+          type: integer
+          format: int64
+          example: 15
+        articleId: 
+          type: integer
+          format: int64
+          example: 12
+        userId: 
+          type: integer
+          format: int64
+          example: 123
+        text: 
+          type: string  
+          example: 'Esse artigo foi muito esclarecedor. Obrigado!'
+        date: 
+          type: string
+          format: date
+          example: '2021-10-05T15:20:00.001Z'
+        status: 
+          type: string  
+          example: 'REGISTRADO'
+        dateStatus: 
+          type: string
+          format: date
+          example: '2021-10-05T15:20:00.001Z'
+    Complaint:
+      type: object
+      required:
+        - id
+        - comment
+        - reason
+        - date
+        - status 
+      properties:
+        id: 
+          type: integer
+          format: int64
+          example: 10
+        comment: 
+          $ref: '#/components/schemas/Comment'
+        reason:
+          type: string
+          example: 'Esse comentário contém palavras ofensivas.'
+        date: 
+          type: string
+          format: date
+          example: '2021-11-03T09:11:00.001Z'
+        status: 
+          type: string
+          example: 'PENDENTE'
+    Interaction: 
+      type: object
+      required:
+        - userId
+        - articleId
+        - readingDate
+      properties:
+        userId: 
+          type: integer
+          format: int64
+          example: 123
+        articleId: 
+          type: integer
+          format: int64
+          example: 12
+        readingDate: 
+          type: string
+          format: date
+          example: '2021-11-03T08:50:00.001Z'
+        like: 
+          type: boolean
+          example: true
+    Connection: 
+      type: object
+      required: 
+        - writer
+        - user
+        - startDateConnection
+      properties:
+        writer: 
+          $ref: '#/components/schemas/Writer'
+        user: 
+          $ref: '#/components/schemas/User'
+        startDateConnection:
+          type: string
+          format: date
+          example: '2021-09-10T07:45:00.001Z'
+        finishDateConnection: 
+          type: string
+          format: date
+    NotificationType: 
+      type: object
+      required:
+        - id
+        - description
+      properties:
+        id: 
+          type: integer
+          format: int64
+          example: 1
+        description:
+          type: string
+          example: 'Novo Artigo'
+    Notification: 
+      type: object
+      required: 
+        - id
+        - notificationType
+        - user
+        - message
+        - date
+        - status
+      properties:
+        id: 
+          type: integer
+          format: int64
+          example: 2345
+        user:
+          $ref: '#/components/schemas/User'
+        notificationType: 
+          $ref: '#/components/schemas/NotificationType'
+        article: 
+          type: integer
+          format: int64
+          example: 10
+        message: 
+          type: string
+          example: 'Novo artigo: "O Futuro da Programação"'
+        link:
+          type: string
+          example: '/blog/jose/articles/ofuturodaprogramacao'
+        image: 
+          type: string
+          example: 'user123/files/article_12/image_110.png'
+        date:
+          type: string
+          format: date
+          example: '2021-11-03T08:50:00.001Z'
+        status:
+          type: string
+          example: 'NOVO'

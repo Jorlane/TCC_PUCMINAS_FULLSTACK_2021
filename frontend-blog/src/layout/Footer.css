@@ -1,0 +1,29 @@
+.Footer {
+    background-color: #94B0B7;
+    position:fixed;
+    height: 4rem;
+    width: 100%;
+    bottom:0;
+    z-index: 1;
+    border-top: 2px solid rgb(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.Footer label {
+    font-size: 0.8rem;
+} 
+
+.Footer.Customized {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+}
+
+@media (max-height: 300px) {
+    .Footer {
+        position: relative;
+    }
+}

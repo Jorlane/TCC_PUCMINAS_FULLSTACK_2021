@@ -1,0 +1,30 @@
+digraph {
+  compound=true
+  graph [splines=polyline,rankdir=TB,ranksep=1.0,nodesep=1.0,fontsize=5]
+  node [shape=box,fontsize=5]
+  edge []
+
+  subgraph cluster_enterprise {
+    margin=25
+    9 [width=1.500000,height=1.000000,fixedsize=true,id=9,label="9: Plataforma de blog"]
+  }
+
+  1 [width=1.333333,height=1.333333,fixedsize=true,id=1,label="1: Usuário Não Autenticado"]
+  2 [width=1.333333,height=1.333333,fixedsize=true,id=2,label="2: Usuário Autenticado"]
+  3 [width=1.333333,height=1.333333,fixedsize=true,id=3,label="3: Administrador"]
+  4 [width=1.500000,height=1.000000,fixedsize=true,id=4,label="4: Agendador de processamento de rotina"]
+  5 [width=1.500000,height=1.000000,fixedsize=true,id=5,label="5: Google Account Api"]
+  6 [width=1.500000,height=1.000000,fixedsize=true,id=6,label="6: Facebook Account Api"]
+  7 [width=1.500000,height=1.000000,fixedsize=true,id=7,label="7: Linkedin Account Api"]
+  8 [width=1.500000,height=1.000000,fixedsize=true,id=8,label="8: Email Service"]
+
+  3 -> 9 [id=28]
+  2 -> 9 [id=26]
+  9 -> 6 [id=36]
+  1 -> 9 [id=24]
+  9 -> 8 [id=41]
+  8 -> 2 [id=42]
+  9 -> 5 [id=33]
+  4 -> 9 [id=30]
+  9 -> 7 [id=39]
+}

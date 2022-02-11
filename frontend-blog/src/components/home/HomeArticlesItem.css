@@ -1,0 +1,124 @@
+.HomeArticlesItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+    border: 2px solid lightgray;
+    box-shadow: 5px 3px 3px gray;
+}
+
+.HomeArticlesItem:hover {
+    background-color: #ccc;
+}
+
+.title {
+    font-size: 1.3rem;
+}
+
+.text-view {
+    padding-left: 30px;
+    padding-top: 15px;
+    font-size: 0.9rem;
+}
+
+.div-body-article {
+    display: flex;
+    flex-direction: row;
+}
+
+.img-view {
+    max-width: 100px;
+    margin: 10px;
+    object-fit: contain;
+}
+
+.div-article-writer {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    max-width: 500px;
+    color: #444;
+    margin: 10px;
+    padding-top: 10px;
+}
+.div-img-article-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.author-article {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.bio-writer-article {
+    font-style: italic;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.image-article-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.div-details {
+    padding-left: 1rem;
+}
+
+
+.div-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.button-delete-article {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.button-delete-article:hover {
+    text-shadow: 1px 1px #fff;
+}
+
+.status {
+    font-style: italic;
+}
+
+.comments {
+    font-style: italic;
+}
+
+.likes {
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .div-body-article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-view {
+        padding-top: 10px;
+    }
+
+    .HomeArticlesItem{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 5px;
+        padding: 5px;
+        cursor: pointer;
+        border: 2px solid lightgray;
+        box-shadow: 5px 3px 3px gray;
+    }
+}

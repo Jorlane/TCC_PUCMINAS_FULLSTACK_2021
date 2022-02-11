@@ -1,0 +1,39 @@
+.input-image {
+    max-height: 300px;
+    object-fit: contain;
+}
+
+
+.invisible-select-image {
+    font-size: 0.2rem;
+    color: transparent;
+    display: none;
+}
+
+.Article-Section {
+    justify-content: center;
+}
+
+.image-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    display: none;
+}
+
+.image-container.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-subtitle {
+    border: none;
+    text-align: center;
+}
+
+.button-upload-image {
+    display: none;
+}
