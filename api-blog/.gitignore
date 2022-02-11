@@ -108,3 +108,6 @@ dist
 #imagens
 file*.jpg
 file*.jpeg
+
+#.DS_store
+.DS_Store
