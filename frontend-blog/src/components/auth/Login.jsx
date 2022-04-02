@@ -44,7 +44,7 @@ const Login = props => {
                 validToken: resp.data.valid 
             }
             updateLoggedUser(payload)
-            navigate('/', {replace: true})
+            navigate('/blog-jorlane/', {replace: true})
         })
         .catch(error => {
             alertError(error.response.data.message, 'user-email')
@@ -65,7 +65,7 @@ const Login = props => {
                 <button className='btn-login' onClick={e => doLogin(e)}>Entrar</button>
             </form>
             <div className='link-new-account'>
-                <Link to="/signup">Clique aqui</Link> para criar uma conta!
+                <Link to="/blog-jorlane/signup">Clique aqui</Link> para criar uma conta!
             </div>
         </div>
     )

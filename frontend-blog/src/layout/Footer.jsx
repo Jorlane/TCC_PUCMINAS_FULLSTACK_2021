@@ -15,11 +15,11 @@ const Footer = props => {
                     <span className="material-icons-outlined">search</span>
                     <label>Pesquisar</label>
                 </button>
-                <Link className='button-link' id='btn-write-article' to='/article'>
+                <Link className='button-link' id='btn-write-article' to='/blog-jorlane/article'>
                     <span className="material-icons-outlined">post_add</span>
                     <label>Escrever Artigo</label>
                 </Link>
-                <Link className='button-link' id='btn-home' to='/' element={<Home/>}>
+                <Link className='button-link' id='btn-home' to='/blog-jorlane/' element={<Home/>}>
                     <span className="material-icons-outlined">home</span>
                     <label>Home</label>
                 </Link>
@@ -29,7 +29,7 @@ const Footer = props => {
         return (
             <footer className='Footer Customized'>
                 {footerContent}
-                <Link className='button-link' id='btn-home' to='/' element={<Home/>}>
+                <Link className='button-link' id='btn-home' to='/blog-jorlane' element={<Home/>}>
                     <span className="material-icons-outlined">home</span>
                     <label>Home</label>
                 </Link>

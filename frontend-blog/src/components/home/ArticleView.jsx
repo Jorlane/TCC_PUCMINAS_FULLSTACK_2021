@@ -38,9 +38,7 @@ const ArticleView = props => {
         
         const param = window.location.search
         if (param && param.trim() !== '') {
-            console.log('window.location => ', window.location)
             const articleId = param.replace('?param=', '').trim()
-            console.log('***** artigo para editar ===> ', articleId)
             if (articleId !== null && articleId !== '') {
                 getArticleToView(articleId)
             }
@@ -49,7 +47,6 @@ const ArticleView = props => {
     }, [init])
 
     useEffect(() => {
-        console.log('Dentro de UseEffect writerId ==> ', writerId)
         setFooterContent(null)
         const buttonRemove = document.getElementById('button-unpublish-article')
         buttonRemove.classList.remove('active')

@@ -6,16 +6,18 @@ import axios from 'axios'
 
 import { AppContext } from '../../data/Store'
 import { API_URL, OPEN_API_URL, IMAGE_URL_API , IMAGE_PROFILE_DEFAULT} from '../../data/Consts'
+import Confirmation from '../util/Confirmation'
 
 import { formatDateFromDateTime } from '../../utils/utils'
 const FormData = require('form-data');
 
 const URL = `${API_URL}/users`
 const URL_IMAGE = `${OPEN_API_URL}/users/profile/image`
+let isUpdated = false
 
 const Profile = props => {
 
-    const {profileLoggedUser, user, showMessage, updateLoggedUser, setToolBarContent, setFooterContent} = useContext(AppContext)
+    const {profileLoggedUser, user, showMessage, updateLoggedUser, setToolBarContent, setFooterContent, showModal, closeModal} = useContext(AppContext)
     const [userForm, setUserForm] = useState(profileLoggedUser)
     const filesElement = useRef(null)
     const [initLoad] = useState(true)
@@ -24,9 +26,11 @@ const Profile = props => {
     useEffect(() => {
         setToolBarContentByProfile()
         setFooterContentByProfile()
+        isUpdated = false
     }, [initLoad])
 
     function handleChange(e, key) {
+        isUpdated = true
         setUserForm({
             ...userForm, 
             [key]: e.target.value
@@ -34,6 +38,7 @@ const Profile = props => {
     }
 
     function handleChangeCheckBox(e, key, type) {
+        isUpdated = true
         setUserForm({
             ...userForm, 
             [key]: e.target.checked 
@@ -57,19 +62,19 @@ const Profile = props => {
         setToolBarContent(
             <div className='profile_toolbar'>
                 <div id='tab_profile' className='tab_icon_title active'>
-                    <button className="button_icon material-icons-outlined" onClick={() => handleClickToolBarButton('tab_profile', '/profile')}>
+                    <button className="button_icon material-icons-outlined" onClick={() => handleClickToolBarButton('tab_profile', '/blog-jorlane/profile')}>
                         person
                     </button>
                     <span>Perfil</span>
                 </div>
                 <div id='tab_blog' className='tab_icon_title'>
-                    <button className="button_icon material-icons-outlined" onClick={() => handleClickToolBarButton('tab_blog', '/blogpreferences')}>
+                    <button className="button_icon material-icons-outlined" onClick={() => handleClickToolBarButton('tab_blog', '/blog-jorlane/blogpreferences')}>
                         menu_book
                     </button>
                     <span>Blog</span>
                 </div>
                 <div id='tab_indicators' className='tab_icon_title'>
-                    <button className="button_icon material-icons-outlined" onClick={() => handleClickToolBarButton('tab_indicators', '/indicators')}>
+                    <button className="button_icon material-icons-outlined" onClick={() => handleClickToolBarButton('tab_indicators', '/blog-jorlane/indicators')}>
                         bar_chart
                     </button>
                     <span>Indicadores</span>
@@ -78,14 +83,14 @@ const Profile = props => {
                     <span className="material-icons-outlined"> library_books </span>
                     <label>Meus Artigos</label>
                 </Link> */}
-                <div id='tab_my_articles' className='tab_icon_title' onClick={() => handleClickToolBarButton('tab_my_articles', '/myarticles')}>
+                <div id='tab_my_articles' className='tab_icon_title' onClick={() => handleClickToolBarButton('tab_my_articles', '/blog-jorlane/myarticles')}>
                     <button className="button_icon material-icons-outlined" >
                         library_books
                     </button>
                     <span>Artigos</span>
                 </div>
                 <div id='tab_connections' className='tab_icon_title'>
-                    <button className="button_icon material-icons-outlined" onClick={() => handleClickToolBarButton('tab_connections', '/connections')}>
+                    <button className="button_icon material-icons-outlined" onClick={() => handleClickToolBarButton('tab_connections', '/blog-jorlane/connections')}>
                         people
                     </button>
                     <span>Conexões</span>
@@ -99,7 +104,7 @@ const Profile = props => {
         setFooterContent(
             <div className='profile_footer'>
                 <div id='btn-cancel-update' className='button-link'>
-                    <button className="button_icon material-icons-outlined" >
+                    <button className="button_icon material-icons-outlined" onClick={cancelChanges}>
                         close
                     </button>
                     <span>Cancelar</span>
@@ -151,9 +156,23 @@ const Profile = props => {
                     showMessage('error', error.response.data.message)
                 })
         }
+
+        isUpdated = false
+    }
+
+    function cancelChanges() {
+        if (isUpdated) {
+            const msg = 'Tem certeza que deseja sair da tela e cancelar as alterações efetuadas? '
+            showModal(<Confirmation message={msg} confirm={() => {navigate('/blog-jorlane/'); closeModal()}} 
+            close={() => closeModal()} cancel={() => closeModal()}/>, 'center')
+        } else {
+            navigate('/blog-jorlane/')
+        }
+        
     }
 
     function handleSelectImage() {
+        isUpdated = true
         const selectFileImage = document.getElementById('select-file-image')
         selectFileImage.click()
         selectFileImage.addEventListener("change", function(){
@@ -177,12 +196,12 @@ const Profile = props => {
                     </div>
                     
                     <div className='div-img-profile'>
-                        <img  id='image-profile' src={`${IMAGE_URL_API}/${userForm.photo || IMAGE_PROFILE_DEFAULT}`} alt="" />
+                        <img  id='image-profile' src={`${IMAGE_URL_API}/${userForm.photo || IMAGE_PROFILE_DEFAULT}`} alt="Imagem de perfil" onClick={handleSelectImage}/>
                         <span id='btn-img-profile' className="material-icons-outlined" onClick={handleSelectImage}>
                             photo_camera
                         </span>
                     </div>
-                    <input id='select-file-image' type="file" accept="image/png, image/jpeg" ref={filesElement}/>
+                    <input id='select-file-image' type="file" accept="image/png, image/jpeg, image/jpg" ref={filesElement}/>
                     <label htmlFor="">Nome:</label>
                     <input id='input-name' type="text" maxLength="20" onChange={(e => handleChange(e, 'name'))} value={userForm.name}/>
                     

@@ -21,9 +21,9 @@ const ToolBar = props => {
 
         const menuAdmin =
                 <ul  id="menu-admin" style={style}>
-                    <li className='menu-option'><Link to="categories" onClick={closeModal}>Categorias</Link></li>
-                    <li><a href="/">Denúncias</a></li>
-                    <li><a href="/">Usuários Bloqueados</a></li>
+                    <li className='menu-option'><Link to="blog-jorlane/categories" onClick={closeModal}>Categorias</Link></li>
+                    <li><a href="blog-jorlane/">Denúncias</a></li>
+                    <li><a href="blog-jorlane/">Usuários Bloqueados</a></li>
                 </ul>
 
         showModal(menuAdmin)
@@ -41,16 +41,16 @@ const ToolBar = props => {
         return (
             <div className='ToolBar'>
                 <div className='user-greetings'>
-                    <button className={`button-back-toolbar button_icon ${(user.validToken && location!=='/')? 'active' : ''}`} onClick={handleClickGoBack}>
+                    <button className={`button-back-toolbar button_icon ${(user.validToken && location!=='/blog-jorlane/')? 'active' : ''}`} onClick={handleClickGoBack}>
                         <span className='material-icons-outlined'>
                             arrow_back
                         </span>
                     </button>
                     <div className={`user-name ${user.validToken ? 'active' : ''}`}>
-                        <span>Olá {user.name}! <Link className='text-link-exit' to="logout">(Sair)</Link></span> 
+                        <span>Olá {user.name}! <Link className='text-link-exit' to="/blog-jorlane/logout">(Sair)</Link></span> 
                     </div>
                     <div className={`no-user-name ${user.validToken ? '' : 'active'}`}>
-                        <Link to="login">Entrar</Link>
+                        <Link to="/blog-jorlane/login">Entrar</Link>
                     </div>
                 </div>
                 <div className='toolbar-buttons'>
@@ -61,8 +61,8 @@ const ToolBar = props => {
                         notifications_none
                     </button>
                     <button id='btn-profile' >
-                        <Link to="profile" onClick={closeModal}>
-                            {profileLoggedUser.id 
+                        <Link to="/blog-jorlane/profile" onClick={closeModal}>
+                            {(profileLoggedUser.id && profileLoggedUser.photo)
                                 ? <img className='tumb-profile' src={`${IMAGE_URL_API}/${profileLoggedUser.photo || IMAGE_PROFILE_DEFAULT}`} alt="" />
                                 : <span className='tumb-profile material-icons-outlined'> account_circle </span>
                             }

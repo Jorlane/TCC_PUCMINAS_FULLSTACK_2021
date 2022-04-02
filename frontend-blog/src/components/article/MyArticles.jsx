@@ -18,7 +18,7 @@ const MyArticles = props => {
     const [status, setStatus] = useState('RASCUNHO')
     const [title, setTitle] = useState('Artigos no Rascunho')
     const [refresh] = useState(props.refresh || true)
-    const {setFooterContent, user, profileLoggedUser, showMessage, showModal, closeModal} = useContext(AppContext)
+    const {setFooterContent, setToolBarContent, user, profileLoggedUser, showMessage, showModal, closeModal} = useContext(AppContext)
     const navigate = useNavigate()
     
     useEffect( () => {
@@ -28,11 +28,12 @@ const MyArticles = props => {
         } 
 
         getArticles()
+        setToolBarContent(null)
         setFooterContentByArticle()
     }, [refresh, status])
 
     function handleClickArticleItem(articleId) {
-        navigate(`/article?param=${articleId}`)
+        navigate(`/blog-jorlane/article?param=${articleId}`)
     }
 
     function getArticles() {
@@ -156,7 +157,7 @@ const MyArticles = props => {
                             deleteArticle={handleClickDeleteArticle}/>
                             )}
                     </div>
-                    <button id='button-add-article' className="btn-add-item material-icons-outlined" onClick={() => navigate('/article')}>
+                    <button id='button-add-article' className="btn-add-item material-icons-outlined" onClick={() => navigate('/blog-jorlane/article')}>
                         add_circle_outline
                     </button>
                 </div>

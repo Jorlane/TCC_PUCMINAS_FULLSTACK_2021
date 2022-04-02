@@ -148,7 +148,7 @@ const Article = props => {
         if (imageFilesToRemove && imageFilesToRemove.length > 0) {
             axios.post(`${URL_SECTION}/images`, imageFilesToRemove, { headers: {"Authorization": user.token} } )
             .then(resp => {
-                console.log('Dentro do then de removeImageFilesFromServer resp => ', resp)
+                imageFilesToRemove = []
             })
             .catch(error=> {
                 showMessage('error', 'Ocorreu um erro. Contate o administrador!')
@@ -181,7 +181,6 @@ const Article = props => {
     }
 
     function saveImageFileName(sectionId, imageFileName, text) {
-        console.log('Vai salvar as nomes das imagens ==> ', pendingImages)
         for (let i = 0; i < pendingImages.length; i++) {
             if (pendingImages[i].sectionId === sectionId) {
                 const sectionInArticle = {
@@ -282,7 +281,7 @@ const Article = props => {
                     </button>
                     <span>Publicar</span>
                 </div>
-                <Link className="button-link" to='myarticles'>
+                <Link className="button-link" to='/blog-jorlane/myarticles'>
                     <span className="material-icons-outlined"> library_books </span>
                     <label>Meus Artigos</label>
                 </Link>
@@ -380,7 +379,6 @@ const Article = props => {
         return divItem.id
     }
     function addCaption(prevElementId, section) {
-        console.log('dentro de addCaption ==> ', section)
         const {divItem, sequenceId, itemId, initText} = initAddSection(prevElementId, section)
         
         ReactDOM.render(
@@ -403,7 +401,6 @@ const Article = props => {
     
     function addImage(prevElementId, section) {
         const {divItem, sequenceId, itemId, initText, imagePath} = initAddSection(prevElementId, section)
-        console.log('***** Carregando a imagem => ', imagePath)
         ReactDOM.render(
             <Image image_id={sequenceId} 
             itemId={itemId} 

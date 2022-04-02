@@ -22,7 +22,6 @@ const HomeArticlesItem = props => {
                 }
             } else if (imageFile === '' && sections[i].sectionId === 'IMAGE') {
                 setImageFile(`${IMAGE_URL_API}/article/${sections[i].imagePath}`)
-                console.log('Setando a imagem ==> ', `${IMAGE_URL_API}/article/${sections[i].imagePath}`)
             }
             if (text.length >= 580) {
                 text = text.substring(0, 580) + '...'

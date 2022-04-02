@@ -25,7 +25,7 @@ const HomeArticles = props => {
     }, [refresh])
 
     function handleClickArticleItem(article) {
-        navigate(`/articleview?param=${article.id}`)
+        navigate(`/blog-jorlane/articleview?param=${article.id}`)
     }
 
     async function getArticles() {
@@ -33,7 +33,6 @@ const HomeArticles = props => {
         if (props.writerIdOnly) {
             urlToFindArticles = `${URL}/bywriter/${props.writerIdOnly}`
         }
-        console.log('Vai selecionar artigos url: ', urlToFindArticles)
 
         await axios.get(urlToFindArticles)
         .then(async resp => {

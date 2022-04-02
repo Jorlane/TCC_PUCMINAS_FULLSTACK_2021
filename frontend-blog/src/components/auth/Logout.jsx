@@ -20,7 +20,7 @@ const Logout = props => {
             validToken: false
         }
         updateLoggedUser(payload)
-        navigate('/', {replace: true})
+        navigate('/blog-jorlane', {replace: true})
 
     }, [user, navigate, updateLoggedUser])
 

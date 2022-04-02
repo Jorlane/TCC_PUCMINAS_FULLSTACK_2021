@@ -26,25 +26,25 @@ const Content = props => {
         <div className='Content'>
             <Header />
             <Routes>
-                <Route path='/' element={<Home/>} />
+                <Route path='blog-jorlane/' element={<Home/>} />
 
                 {/* Admin Routes */}
-                <Route path='categories' element={<AdminRoute element={<CategoryList />} />}/>
+                <Route path='blog-jorlane/categories' element={<AdminRoute element={<CategoryList />} />}/>
 
                 {/* Private Routes */}
-                <Route path='profile' element={<PrivateRoute element={<Profile />} />} />
-                <Route path='blogpreferences' element={<PrivateRoute element={<BlogPreferences />} />} />
-                <Route path='indicators' element={<PrivateRoute element={<Indicators />} />} />
-                <Route path='connections' element={<PrivateRoute element={<Connections />} />} />
-                <Route path='article' element={<PrivateRoute element={<Article />} />} />
+                <Route path='blog-jorlane/profile' element={<PrivateRoute element={<Profile />} />} />
+                <Route path='blog-jorlane/blogpreferences' element={<PrivateRoute element={<BlogPreferences />} />} />
+                <Route path='blog-jorlane/indicators' element={<PrivateRoute element={<Indicators />} />} />
+                <Route path='blog-jorlane/connections' element={<PrivateRoute element={<Connections />} />} />
+                <Route path='blog-jorlane/article' element={<PrivateRoute element={<Article />} />} />
                 {/* <Route path='article/:id' element={<PrivateRoute element={<Article />} />} /> */}
-                <Route path='myarticles' element={<PrivateRoute element={<MyArticles />} />} />
+                <Route path='blog-jorlane/myarticles' element={<PrivateRoute element={<MyArticles />} />} />
 
                 {/* Public Routes */}
-                <Route path='articleview' element={<ArticleView />} />
-                <Route path='login' element={<Login />}/>
-                <Route path='signup' element={<Signup />}/>s
-                <Route path='logout' element={<Logout />}/>
+                <Route path='blog-jorlane/articleview' element={<ArticleView />} />
+                <Route path='blog-jorlane/login' element={<Login />}/>
+                <Route path='blog-jorlane/signup' element={<Signup />}/>s
+                <Route path='blog-jorlane/logout' element={<Logout />}/>
             </Routes>
         </div>
     )

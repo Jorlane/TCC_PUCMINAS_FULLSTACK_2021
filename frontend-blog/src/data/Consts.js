@@ -1,5 +1,5 @@
-//const URL_SERVER = 'http://192.168.0.220:3200'
-const URL_SERVER = 'http://52.67.107.252:3000'
+// const URL_SERVER = 'http://localhost:3200' // desenvolvimento
+const URL_SERVER = 'https://jorlane.com.br' // produção
 
 const API_URL=`${URL_SERVER}/api`
 const OPEN_API_URL=`${URL_SERVER}/oapi`

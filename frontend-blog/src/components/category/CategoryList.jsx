@@ -48,7 +48,6 @@ const CategoryList = props => {
     function getCategories() {
         getCategoriesWithChildren()
             .then(result => {
-                console.log('result ====> ', result)
                 setRootCategories(result)
                 setCategories(result)
             })

@@ -30,26 +30,26 @@ const Menu = props => {
             <ul id='menu-list'>
                 <li className={`menu-item ${user.isAdministrator ? 'active' : ''}`} onClick={e => toogleActiveSubmenu(e)}><span>Administração</span>
                     <ul id='submenu-adm' className='submenu'>
-                        <li className='submenu-item'><Link to="categories" >Categorias</Link></li>
-                        <li className='submenu-item'><Link to="/">Denúncias</Link></li>
-                        <li className='submenu-item'><Link to="/">Usuários Bloqueados</Link></li>
+                        <li className='submenu-item'><Link to="blog-jorlane/categories" >Categorias</Link></li>
+                        <li className='submenu-item'><Link to="blog-jorlane/">Denúncias</Link></li>
+                        <li className='submenu-item'><Link to="blog-jorlane/">Usuários Bloqueados</Link></li>
                     </ul>
                 </li>
                 <li className={`menu-item ${user.validToken ? 'active' : ''}`}>
-                    <Link to="profile">Perfil</Link>
+                    <Link to="blog-jorlane/profile">Perfil</Link>
                 </li>
                 <li  className={`menu-item ${user.validToken ? 'active' : ''}`}><span>Blog</span>
                     <ul id='submenu-blog' className='submenu'>
-                        <li className='submenu-item'><Link to="blogpreferences">Preferências</Link></li>
-                        <li className='submenu-item'><Link to="in">Minhas Conexões</Link></li>
-                        <li className='submenu-item'><Link to="/">Meus Indicadores</Link></li>
-                        <li className='submenu-item'><Link to='myarticles'>Meus Artigos</Link></li>
+                        <li className='submenu-item'><Link to="blog-jorlane/blogpreferences">Preferências</Link></li>
+                        <li className='submenu-item'><Link to="blog-jorlane/in">Minhas Conexões</Link></li>
+                        <li className='submenu-item'><Link to="blog-jorlane//">Meus Indicadores</Link></li>
+                        <li className='submenu-item'><Link to='blog-jorlane/myarticles'>Meus Artigos</Link></li>
                     </ul>
                 </li>
-                <li className='menu-item active'><Link to="/">Pesquisar</Link></li>
-                <li className='menu-item active'><Link to='article'>Escrever</Link></li>
-                <li className={`menu-item ${user.validToken ? 'active' : ''}`}><Link to="/">Notificações</Link></li>
-                <li className={`menu-item ${user.validToken ? 'active' : ''}`}><Link to="logout">Sair</Link></li>
+                <li className='menu-item active'><Link to="blog-jorlane/">Pesquisar</Link></li>
+                <li className='menu-item active'><Link to='blog-jorlane/article'>Escrever</Link></li>
+                <li className={`menu-item ${user.validToken ? 'active' : ''}`}><Link to="blog-jorlane//">Notificações</Link></li>
+                <li className={`menu-item ${user.validToken ? 'active' : ''}`}><Link to="blog-jorlane/logout">Sair</Link></li>
             </ul>
 
             <button id='btn-mobile' onClick={() => toggleMenu()}>
