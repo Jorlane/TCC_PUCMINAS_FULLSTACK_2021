@@ -12,6 +12,8 @@
     text-align: left;
     resize: none;
     text-align: center;
+    overflow: auto;
+    height: auto;
 }
 
 .input-title:focus{

@@ -21,7 +21,8 @@ export  const initialState = {
         allowEmailNotification: null,
         frequencyEmailNotification: null,
         firstAccess: null,
-        lastAccess: null
+        lastAccess: null, 
+        commentBlocked: false
     }, 
     toolBarContent: null,
     footerContent: null

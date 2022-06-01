@@ -18,8 +18,10 @@ import MyArticles from '../components/article/MyArticles'
 import AdminRoute from '../components/auth/AdminRoute'
 import PrivateRoute from '../components/auth/PrivateRoute'
 import Indicators from '../components/indicators/indicators'
-import Connections from '../components/connections/connections'
+import Connections from '../components/connections/Connections'
 import ArticleView from '../components/home/ArticleView'
+import ComplaintList from '../components/complaint/ComplaintList'
+import BlockedUsers from '../components/blockedUsers/BlockedUsers'
 
 const Content = props => {
     return (
@@ -30,6 +32,8 @@ const Content = props => {
 
                 {/* Admin Routes */}
                 <Route path='blog-jorlane/categories' element={<AdminRoute element={<CategoryList />} />}/>
+                <Route path='blog-jorlane/complaints' element={<AdminRoute element={<ComplaintList />} />}/>
+                <Route path='blog-jorlane/blockedUsers' element={<AdminRoute element={<BlockedUsers />} />}/>
 
                 {/* Private Routes */}
                 <Route path='blog-jorlane/profile' element={<PrivateRoute element={<Profile />} />} />

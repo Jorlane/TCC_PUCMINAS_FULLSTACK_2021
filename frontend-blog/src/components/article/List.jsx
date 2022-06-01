@@ -41,6 +41,7 @@ const List = props => {
         const newInput = document.createElement('input')
         newInput.type = 'text'
         newInput.placeholder = 'Novo item...'
+        newInput.setAttribute('parentid', itemId)
         if (initTextItem && initTextItem !== '') {
             newInput.value = initTextItem
         } else {
@@ -56,6 +57,20 @@ const List = props => {
 
     function handleKeyDown(e) {
         autoResize(e)
+        const key = e.key;
+        if (key.toUpperCase() === "BACKSPACE" ||key.toUpperCase() === "DELETE") {
+            if (e.target.value === '') {
+                const li = document.getElementById(e.target.getAttribute('parentid'))
+                const divParent = document.getElementById(props.itemId)
+                divParent.removeChild(li)
+                if (divParent && divParent.lastChild && divParent.lastChild.firstChild) {
+                    divParent.lastChild.firstChild.focus()
+                    e.preventDefault()
+                } else {
+                    props.handleRemoveSection(props.itemId)
+                }
+            } 
+        }
     }
 
     function handleTextChange(e) {
@@ -75,8 +90,8 @@ const List = props => {
         for (let i = 0; i < menus.length; i++) {
             menus[i].classList.remove('active')
         }
-        
-        const menu = document.getElementById(`item-toolbar-${props.list_id}`)
+
+        const menu = document.getElementById(`item-toolbar-${props.itemId}`)
         menu.classList.add('active')
     }
 
@@ -92,7 +107,7 @@ const List = props => {
     }
 
     return (
-        <div className='Article-Section' itemid={props.itemId} sectiontype='List' value={list} id={`div_${props.itemId}`}>
+        <div className='Article-Section' itemID={props.itemId} sectiontype='List' value={list} id={`div_${props.itemId}`}>
             <ul className='input-list' id={props.itemId} type='text' 
                 // onKeyUp={e => props.onKeyUp(e, props.divParent)}
                 onKeyDown={handleKeyDown}
@@ -104,7 +119,7 @@ const List = props => {
                 </li> */}
             </ul>
             
-            <div className='item-toolbar' id={`item-toolbar-${props.list_id}`}>
+            <div className='item-toolbar toolbar-list' id={`item-toolbar-${props.itemId}`}>
                 {props.menu}
             </div>
         </div>

@@ -7,27 +7,31 @@ import { IMAGE_URL_API, IMAGE_PROFILE_DEFAULT} from '../../data/Consts'
 const HomeArticlesItem = props => {
     const [authorAndDate] = useState(getAuthorAndDate())
     const [bioDescription] = useState(getBioDescription())
-    const [textView, setTextView] = useState('')
     const [imageFile, setImageFile] = useState('')
     
     useEffect(() => {
         const sections = props.article.sectionsinarticles
         let text = ''
+        const textViewElement = document.getElementById(`text-view-${props.article.id}`)
         for (let i = 0; i < sections.length; i++) {
             if (sections[i].sectionId === 'PARAGRAPH') {
-                if (text === '' && text.length < 580) {
-                    text = sections[i].text
-                } else if (text.length < 200) {
-                    text = text + '/n' + sections[i].text
+                if (text.length < 200) {
+                    const limit = 200 - text.length
+                    let paragraphToInclude = ''
+                    if (sections[i].text.length <= limit) {
+                        paragraphToInclude = sections[i].text
+                    } else if (sections[i].text.length > limit) {
+                        paragraphToInclude = sections[i].text.substring(0, limit) + '...'
+                    }
+                    text = text + paragraphToInclude
+                    const p = document.createElement('p')
+                    p.innerText = paragraphToInclude
+                    textViewElement.appendChild(p)
                 }
             } else if (imageFile === '' && sections[i].sectionId === 'IMAGE') {
                 setImageFile(`${IMAGE_URL_API}/article/${sections[i].imagePath}`)
             }
-            if (text.length >= 580) {
-                text = text.substring(0, 580) + '...'
-            }
         }
-        setTextView(text)
     }, [authorAndDate])
 
     function getAuthorAndDate() {
@@ -53,7 +57,7 @@ const HomeArticlesItem = props => {
                 <div className='div-content-article' onClick={() => props.handleClickArticleItem(props.article)}>
                     <div className='title' >{props.article.title}</div>
                     <div className='div-body-article'>
-                        <div className='text-view' >{textView}</div>
+                        <div className='text-view' id={`text-view-${props.article.id}`}></div>
                         <img className='img-view' src={imageFile} alt="" />
                     </div>
                     <div className='div-article-writer'>

@@ -1,0 +1,102 @@
+.ComplaintReason {
+    background-color: red;
+    width: fit-content;
+    max-width: 600px;
+    padding: 2px;
+    border-radius: 6px;
+    margin: 15px;
+    font-size: 0.9rem;
+}
+
+.header-confirmation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    color: #fff;
+    padding: 3px;
+}
+
+.box-title {
+    display: flex;
+    flex: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.title-message {
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.box-title .material-icons-outlined {
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.box-body-message {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.text-reason {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 0.9rem;
+}
+
+.text-reason.red-focus:focus{
+    border: 2px solid red;
+    outline: 0;
+}
+
+.alert-validation-field {
+    font-size: 0.8rem;
+    color: red;
+    visibility: hidden;
+}
+
+.alert-validation-field.visible {
+    visibility: visible;
+}
+
+.message {
+    margin-top: 10px;
+}
+
+.buttons-confirmation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.btn-confirmation {
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    width: 100px;
+    box-sizing: border-box;
+}
+
+.btn-confirmation .material-icons-outlined {
+    font-size: 1rem;
+    padding-right: 10px;
+}
+
+.text-info {
+    margin-top: 1rem;
+    width: 100%;
+    text-align:  center;
+}
+

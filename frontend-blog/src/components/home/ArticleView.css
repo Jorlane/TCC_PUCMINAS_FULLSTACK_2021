@@ -39,7 +39,7 @@
 
 .ArticleViewBody img {
     /* padding-top: 10px; */
-    max-width: 200px;
+    max-width: 100%;
     align-self: center;
 }
 
@@ -51,9 +51,18 @@
 }
 
 .div-img-view p {
+    width: 100%;
     text-align: center;
     padding-top: 2px;
     font-style: italic;
+    text-indent: 0cm;
+
+}
+
+.img-view{
+    width: fit-content;
+    max-height: 300px;
+    object-fit: contain;
 }
 
 .ArticleViewBody li {
@@ -100,6 +109,7 @@
     height: 80px;
     border-radius: 50%;
     padding: 0;
+    object-fit: cover;
 }
 
 .div-details-article-view {
@@ -119,15 +129,23 @@
     font-weight: bold;
 }
 
+.info-followers {
+    font-size: 0.8rem;
+}
+
 .link-follow {
     margin-top: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .ArticleViewFooter {
     border-top: 1px solid #ccc;
     margin-top: 2rem;
     padding: 0;
+}
+
+.ArticleViewFooter * {
+    padding-top: 0.3rem;
 }
 
 .div-button-like {
@@ -164,9 +182,36 @@
 }
 
 .div-form-comments {
-    color: blue;
     margin: 0%;
     padding: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#div-edit-comments {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+#div-edit-comments.hidden {
+    visibility: hidden;
+    height: 10px;
+}
+
+#div-comment-blocked {
+    visibility: hidden;
+}
+
+#div-comment-blocked.visible {
+    visibility: visible;
+    color: #212121;
+    font-size: 0.9rem;
 }
 
 .article_view_footer {
@@ -197,6 +242,95 @@
     font-size: 3rem;
 }
 
+.fontcolor-blue {
+    color: blue;
+}
+
+.fontcolor-darkgray {
+    color: #333;
+}
+
+.fontcolor-gray {
+    color: gray;
+}
+
+#textSuggestLike {
+    font-size: 0.9rem;
+}
+
+.inputComment {
+    border: 0.5px solid gray;
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    width: 100%;
+}
+
+.div-button-send-comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: top;
+    height: auto;
+    background-color: red;
+    padding: 10px;
+}
+
+.button-complaint-article {
+    color: #888;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.button-complaint-article:hover {
+    cursor: pointer;
+    color: #444;
+}
+
+.text-complaint {
+    color: #888;
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+.text-complaint:hover {
+    cursor: pointer;
+    color: #444;
+}
+
+#buttonSendComment {
+    padding: 0;
+    color: #333;
+    border: none;
+    background: none;
+    margin: 0;
+    /* height: 2rem; */
+}
+
+#div-comments {
+    min-height: 20px;
+    width: 70%;
+}
+
+.div-group-comment {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.header-comment {
+    color: #666;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text-comment {
+    color: #222;
+    font-size: 0.9rem;
+}
+
 @media (max-width: 600px) {
     .ArticleViewBody {
         margin: 5px;
@@ -223,4 +357,14 @@
         overflow: hidden;
         white-space: wrap;
     }
+
+    #div-comments {
+        min-height: 20px;
+        width: 90%;
+    }
+
+    #div-edit-comments {
+        width: 90%;
+    }
+    
 }

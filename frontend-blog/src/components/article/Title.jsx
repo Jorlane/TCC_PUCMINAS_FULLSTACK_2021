@@ -9,16 +9,14 @@ const Title = props => {
         const e = document.getElementById(props.itemId)
         if (e) {
             while ((e.scrollHeight) > e.offsetHeight) {
-                console.log('e.target.scrollHeight => ', e.scrollHeight)
-                console.log('e.target.offsetHeight => ', e.offsetHeight)
                 e.rows++;
             }
         }
     }
 
     function handleTextChange(e) {
-        setText(e.target.value)
         resizeTextArea()
+        setText(e.target.value)
     }
 
     function handleFocus(e) {
@@ -33,9 +31,10 @@ const Title = props => {
 
     return (
         <div className='Title'>
-             <input className='input-title' id={props.itemId} type="text" placeholder='Título...'
+             <textarea className='input-title' id={props.itemId} type="text" placeholder='Título...'
                 value={text} 
-                maxLength='80' autoComplete='off' rows='2'
+                maxLength='80' autoComplete='off'
+                multiple={true}
                 onKeyUp={e => props.handleKeyUp(e, props.divParent)}
                 onKeyDown={props.handleKeyDown}
                 onKeyPress={props.handleKeyPress}

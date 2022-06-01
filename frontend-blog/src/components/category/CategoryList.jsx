@@ -15,7 +15,6 @@ const URL = `${API_URL}/categories`
 const OPEN_URL = `${OPEN_API_URL}/categories`
 
 const CategoryList = props => {
-    const [rootCategories, setRootCategories] = useState([])
     const [categories, setCategories] = useState([])
     const [refresh] = useState(props.refresh || true)
     const {showModal, closeModal, showMessage, user, setToolBarContent} = useContext(AppContext)
@@ -48,7 +47,6 @@ const CategoryList = props => {
     function getCategories() {
         getCategoriesWithChildren()
             .then(result => {
-                setRootCategories(result)
                 setCategories(result)
             })
             .catch(error => showMessage('error', error.message))
@@ -56,7 +54,7 @@ const CategoryList = props => {
 
     function handleClickListItem(category) {
         showModal(<CategoryForm title='Consulta Categoria' close={closeFormCategory} 
-            readOnly='true' category={category} categories={rootCategories}/>, 'center')
+            readOnly='true' category={category}/>, 'center')
     }
 
     function saveCategory(category) {
@@ -75,7 +73,7 @@ const CategoryList = props => {
     }
 
     function showFormAddCategory() {
-        showModal(<CategoryForm title='Adicionar Categoria' close={closeFormCategory} saveCategory={saveCategory} category={{}} categories={rootCategories}/>, 'center')
+        showModal(<CategoryForm title='Adicionar Categoria' close={closeFormCategory} saveCategory={saveCategory} category={{}} />, 'center')
     }
 
     function handleRemoveListItem(category) {

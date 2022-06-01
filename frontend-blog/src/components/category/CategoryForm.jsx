@@ -1,8 +1,10 @@
 import './CategoryForm.css'
 
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { formatDateFromDateTime } from '../../utils/utils'
 import Message from '../util/Message'
+import { getCategoriesWithChildren } from './CategoryUtil'
+import { AppContext } from '../../data/Store'
 
 const initCategory = {
     name: '',
@@ -14,11 +16,26 @@ const initCategory = {
 const CategoryForm = props => {
     const [category, setCategory] = useState(props.category || initCategory)
     const [categoryParent, setCategoryParent] = useState(props.category.categoryParent || '')
+    const [categories, setCategories] = useState([])
+    const [refresh, setRefresh] = useState(0)
+    const {showMessage} = useContext(AppContext)
+
+    useEffect( () => {
+        getCategories()
+    }, [refresh])
 
     function handleChangeCategoryName(e) {
         if (e.target.id === 'input-name-category' && !props.readOnly) {
             setCategory({...category, name: e.target.value}) 
         }
+    }
+
+    function getCategories() {
+        getCategoriesWithChildren()
+            .then(result => {
+                setCategories(result)
+            })
+            .catch(error => showMessage('error', error.message))
     }
 
     function saveCategory() {
@@ -39,6 +56,7 @@ const CategoryForm = props => {
         setCategory(initCategory)
         setCategoryParent('')
         setPlaceHolderAtCategoryParent(document.getElementById('select-category'), '')
+        setRefresh(refresh + 1)
         const inputName = document.getElementById('input-name-category')
         inputName.focus()
     }
@@ -62,6 +80,10 @@ const CategoryForm = props => {
             selectCategory.classList.remove('place-holder')
         }
     }
+
+    function handleCategoriesChange() {
+        console.log('Mudou a lista de categorias')
+    }
     
     return (
         <div className={props.readOnly ? 'CategoryForm color-readonly' : 'CategoryForm color-updatable'}>
@@ -83,7 +105,7 @@ const CategoryForm = props => {
                     <label htmlFor="categories">Categoria Agrupadora</label>
                     <select className='select-parent-category place-holder' id='select-category' name="categories" onChange={e => handleChangeCategorySelect(e)} value={categoryParent}>
                         <option value="" >(Sem categoria agrupadora)</option>
-                        {props.categories.map(item => {
+                        {categories.map(item => {
                             if (item.category.categoryParent === null) {
                                 return <option key={item.category.id} value={item.category.id}>{item.category.name}</option>
                             } else {

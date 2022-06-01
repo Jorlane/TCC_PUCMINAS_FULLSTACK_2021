@@ -1,0 +1,62 @@
+.ConnectionItemMain {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15% 60% 25%;
+    background-color: #ddd;
+    border-bottom: 1px solid #444;
+}
+
+.img-view-profile-following {
+    width: 60px;
+    height: 60px;
+    box-sizing: content-box;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.div-user-connection {
+    font-weight: bold;
+}
+
+.div-start-connection {
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.leftColumnFollowing {
+    padding: 10px;
+}
+
+.middleColumnFollowing {
+    padding: 10px;
+}
+
+.rightColumnFollowing {
+    padding: 10px;
+}
+
+.button-remove-connection {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     font-size: 0.8rem;
+}
+
+.button-remove-connection:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.button-remove-connection .material-icons-outlined {
+    font-size: 1.8rem;
+}
+
+@media (max-width: 600px) {
+    .text-button-remove-connection {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+}

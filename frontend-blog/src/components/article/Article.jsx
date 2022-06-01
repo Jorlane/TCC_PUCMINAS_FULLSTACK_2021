@@ -25,7 +25,7 @@ let initialArticle = {
     id: null,
     writerId: null,
     title: '',
-    categoryId: 1,
+    categoryId: null,
     htmlFilePath: "sem html",
     route: "sem rota"
 }
@@ -40,6 +40,7 @@ const Article = props => {
 
     const {setFooterContent, user, profileLoggedUser, showMessage, setToolBarContent} = useContext(AppContext)
     const [categories, setCategories] = useState([])
+    const [categoryId, setCategoryId] = useState(null)
     const [init] = useState(true)
 
     useEffect( async () => {
@@ -89,6 +90,8 @@ const Article = props => {
                     htmlFilePath: resp.data.htmlFilePath,
                     route: resp.data.route
                 }
+
+                setCategoryId(resp.data.categoryId)
                 const sections = resp.data.sectionsinarticles
                 sections.map(section => {
                     addSectionToArticle(section.sectionId.toUpperCase(), null, section)
@@ -101,8 +104,9 @@ const Article = props => {
 
     function saveArticle(prevStatusParam) {
         const titleElement = document.getElementById('title')
+
         if (titleElement) {
-            articleToEdit.title = titleElement.getAttribute('value')
+            articleToEdit.title = titleElement.value
         }
 
         const prevStatus = prevStatusParam || articleToEdit.status
@@ -213,7 +217,7 @@ const Article = props => {
                 let value = section.getAttribute('value')
                 let complement = ''
                 if (sectionType === 'LIST') {
-                    const itemId = section.getAttribute('itemid')
+                    const itemId = section.getAttribute('itemId')
                     for (let i = 0; i < controlCallbackList.length; i++) {
                         const item = controlCallbackList[i]
                         if (item.itemId === itemId) {
@@ -246,7 +250,7 @@ const Article = props => {
     function publishArticle() {
         const titleElement = document.getElementById('title')
         if (titleElement) {
-            articleToEdit.title = titleElement.getAttribute('value')
+            articleToEdit.title = titleElement.value
         }
         if (!articleToEdit.title || articleToEdit.title === '') {
             showMessage('error', 'Por favor, informe um título para o artigo!')
@@ -435,6 +439,7 @@ const Article = props => {
                 onKeyUp={handleKeyUp}  
                 initList={initList}
                 setCallbackGetList={setCallbackGetList}
+                handleRemoveSection={removeSectionToArticle}
                 menu={<ToolbarArticle id='nav-add-section' itemId={itemId} 
                         handleAddSection={addSectionToArticle}
                         handleRemoveSection={removeSectionToArticle}
@@ -488,6 +493,11 @@ const Article = props => {
         return divItem.id
     }
 
+    function handleChangeSelectCategory(e) {
+        articleToEdit.categoryId = e.target.value
+        setCategoryId(e.target.value)
+    }
+
     function handleKeyUp(e, divParentId) {
         if (e.key && e.key.toUpperCase() === 'ENTER') {
             addParagraph(divParentId)
@@ -533,10 +543,11 @@ const Article = props => {
         <div className='Article'>
             <div className="div-category" >
                 <label htmlFor='categories'> Categoria: </label>
-                <select id='categories' className='category-select'>
+                <select id='categories' className='category-select' onChange={handleChangeSelectCategory} value={categoryId} >
                     {categories.map(item => {
                         if (item.categoryParent) {
-                            return <option key={item.id} value={item.id}>{`+--${item.name}`}</option> 
+                            return  <option key={item.id} value={item.id}>&nbsp;&nbsp;&nbsp;&nbsp;{`${item.name}`}</option> 
+                                
                         } else {
                             return <option key={item.id} value={item.id}>{item.name}</option> 
                         }

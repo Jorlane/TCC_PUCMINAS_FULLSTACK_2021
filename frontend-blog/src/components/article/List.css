@@ -3,11 +3,14 @@
     margin: 0;
 }
 .input-list {
-    width: 100%;
     border: none;
     padding: 2px;
     overflow: visible;
     margin-left: 50px;
+}
+
+.input-list input {
+    width: 100%;
 }
 
 .input-list:hover {
@@ -32,4 +35,7 @@
 
 .item-toolbar.active {
     display: flex;
+}
+.toolbar-list {
+    flex-direction: column;
 }

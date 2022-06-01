@@ -73,7 +73,6 @@ const Image = props => {
     }
 
     function uploadImage() {
-        console.log('vai fazer upload da imagem')
         if (filesElement.current.files.length >= 1) {
             const dataForm = new FormData()
             for (const file of filesElement.current.files) {
@@ -88,7 +87,6 @@ const Image = props => {
                     })
             } 
         } else {
-            console.log('vai tentar com src ==> ', props.src)
             if (props.src) {
                 props.saveImageFileName(`div_${props.itemId}`, props.src, text)
             }
@@ -101,7 +99,7 @@ const Image = props => {
                 <div className='image-container' id={`image-container-${props.itemId}`}>
                     <img className='input-image' id={props.itemId} src={src} alt={text}
                         onClick={handleFocusOnImage}/>
-                    <input className='image-subtitle' type="text" placeholder='Legenda...' value={text} onChange={handleTextChange} onFocus={showToolbar}/>
+                    <textarea className='image-subtitle' type="text" placeholder='Legenda...' multiple={true} value={text} onChange={handleTextChange} onFocus={showToolbar}/>
                 </div>
             </div>
             <form action="">

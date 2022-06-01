@@ -3,5 +3,50 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+}
+
+.connections-main {
+    width: 600px;
+    padding: 10px;
+}
+
+.connections-main h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 5px;
+}
+
+.div-title-follow {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.div-following-list {
+    margin-top: 20px;
+    width: 600px;
+    padding: 10px;
+    visibility: visible;
+}
+
+.div-following-list.hidden {
+    visibility: hidden;
+}
+
+.div-title-following-list {
+    background-color: #444;
+    color: #eee;
+    padding: 3px;
+}
+
+@media (max-width: 600px) {
+    .connections-main {
+        width:  calc(100% - 20px);
+        padding: 10px;
+    }
+
+    .div-following-list {
+        width:  calc(100% - 20px);
+        padding: 10px;
+    }
 }

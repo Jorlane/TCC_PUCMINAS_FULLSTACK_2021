@@ -1,0 +1,136 @@
+.ComplaintItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ComplaintItemMain {
+    display: grid;
+    grid-template-columns: 4fr 12fr;
+    width: 600px;
+    margin: 5px;
+    padding: 5px;
+    border: 0.5px solid #B71C1C;
+    border-bottom: 2px solid #B71C1C;
+    border-right: 2px solid #B71C1C;
+    font-size: 0.9rem;
+    background-color: #ddd;
+}
+
+.img-view-profile-complaint {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.leftColumn * {
+    margin-top: 10px;
+}
+
+.leftColumn {
+    background-color: #ddd;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.leftColumn div {
+    text-align: center;
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.div-status {
+    font-weight: bold;
+}
+
+.text-status {
+    color: red;
+}
+
+.text-status.DEFERIDA {
+    color: green;
+}
+
+.text-status.INDEFERIDA {
+    color: orange;
+}
+
+.div-user-comment {
+    color: #000;
+    font-style: italic;
+}
+
+.div-article {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.div-comment-content {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.div-complaint-reason {
+    color: #000;
+}
+
+.div-complaint-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button-complaint {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #ddd;
+    color: #000;
+    margin: 5px;
+    font-size: 0.7rem;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #fff;
+}
+
+.button-complaint:hover {
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #555;
+}
+
+.button-complaint span {
+    font-size: 1.3rem;
+    margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+    .ComplaintItemMain {
+        width: calc(100% - 10px);
+        padding: 5px;
+        margin: 5px;
+    }
+
+    .button-complaint {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

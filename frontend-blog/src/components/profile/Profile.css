@@ -1,5 +1,4 @@
 .Profile {
-    overflow: scroll;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -19,7 +18,6 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
 }
 
 .Profile form label {

@@ -57,10 +57,14 @@ const HomeArticles = props => {
 
     return (
         <div className='HomeArticles'>
+            <div className='home-left-column'>
+            </div>
             <div className='list-home-articles'>
                 {articles.map((article, position) => 
                     <HomeArticlesItem key={`item_${position}`} article={article}  handleClickArticleItem={handleClickArticleItem}/>
                 )}
+            </div>
+            <div className='home-right-column'>
             </div>
         </div>
     )
