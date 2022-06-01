@@ -456,11 +456,11 @@ const ArticleView = props => {
                 </div>
             </div>
             <div className='ArticleViewBody'>
-                <h1>{article.title}</h1>
+                <h2>{article.title}</h2>
                 {article.sectionsinarticles.map((section, position) => {
                     switch (section.sectionId) {
                         case 'CAPTION':
-                            return <h2 key={`{h2_${position}}`}>{section.text}</h2>
+                            return <h3 key={`{h2_${position}}`}>{section.text}</h3>
                         case 'PARAGRAPH':
                             return <p key={`{p_${position}}`}>{section.text}</p>
                         case 'IMAGE':

@@ -366,5 +366,15 @@
     #div-edit-comments {
         width: 90%;
     }
+
+    .image-profile-article-view {
+        width: 60px;
+        height: 60px;
+    }
+
+    .div-profile-img-article-view {
+        width: 60px;
+        height: 60px;
+    }
     
 }
